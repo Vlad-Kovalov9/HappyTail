@@ -1,0 +1,56 @@
+.container {
+  max-width: 390px;
+  padding: 14px 39px;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.logo {
+  width: 125px;
+  height: 46px;
+}
+
+.iconsContainer {
+  display: flex;
+  gap: 27px;
+  margin-left: auto;
+  align-items: center;
+}
+
+.burgerBtn {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+  color: #291f1b;
+}
+
+.burgerLine {
+  width: 20px;
+  height: 2px;
+  background-color: #291f1b;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.burgerBtn.open .burgerLine:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.burgerBtn.open .burgerLine:nth-child(2) {
+  opacity: 0;
+}
+
+.burgerBtn.open .burgerLine:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+.searchIcon,
+.burgerIcon {
+  width: 21px;
+  height: 21px;
+}

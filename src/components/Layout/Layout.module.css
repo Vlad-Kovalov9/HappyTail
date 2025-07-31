@@ -1,28 +1,26 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
 .layout {
   flex: 1;
   width: 100%;
-  max-width: 375px;
+  max-width: 390px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 39px;
 }
 
-@media screen and (min-width: 834px) {
+@media screen and (min-width: 768px) {
   .layout {
     max-width: none;
-    /* width: 834px; */
-    padding: 0 24px;
+    padding: 0 70px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .layout {
     width: 1440px;
-    padding: 0 72px;
+    padding: 0 42px;
   }
 }
