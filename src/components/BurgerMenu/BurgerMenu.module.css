@@ -17,16 +17,16 @@
 
 .modal {
   background-color: #f9f9f5;
-  width: 260px;
+  width: 100%;
   height: 100%;
-  padding: 50px 20px;
+  padding: 100px 20px 20px;
   box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
   transform: translateX(100%);
   transition: transform 0.3s ease;
   transform-origin: right;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
   position: relative;
   overflow-y: auto;
 }
@@ -35,15 +35,11 @@
   transform: translateX(0);
 }
 
-.entranceIcon,
-.coinIcon {
-  width: 16px;
-  height: 16px;
-}
-
-.mediaIcon {
-  width: 20px;
-  height: 20px;
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
 }
 
 .list {
@@ -72,7 +68,6 @@
   flex-direction: column;
   align-items: center;
   gap: 22px;
-  margin-top: 65px;
 }
 
 .btnEnter {
@@ -117,11 +112,21 @@
   background-color: #fb8c00;
 }
 
+.entranceIcon,
+.coinIcon {
+  width: 16px;
+  height: 16px;
+}
+
 .mediaList {
   display: flex;
   gap: 20px;
   justify-content: center;
-  margin-bottom: 50px;
+}
+
+.mediaIcon {
+  width: 20px;
+  height: 20px;
 }
 
 @media screen and (min-width: 768px) {

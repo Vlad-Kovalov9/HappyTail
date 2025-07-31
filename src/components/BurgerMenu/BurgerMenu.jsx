@@ -26,7 +26,7 @@ export default function BurgerMenu({ isOpen, onClose }) {
       onClick={handleBackdropClick}
     >
       <div className={s.modal}>
-        <div>
+        <div className={s.content}>
           <ul className={s.list}>
             <li>
               <NavLink to="/" className={s.link} onClick={onClose}>
@@ -69,30 +69,30 @@ export default function BurgerMenu({ isOpen, onClose }) {
               </svg>
             </button>
           </div>
-        </div>
 
-        <ul className={s.mediaList}>
-          <li>
-            <svg className={s.mediaIcon}>
-              <use href={`${sprite}#icon-telegram`} />
-            </svg>
-          </li>
-          <li>
-            <svg className={s.mediaIcon}>
-              <use href={`${sprite}#icon-instagram`} />
-            </svg>
-          </li>
-          <li>
-            <svg className={s.mediaIcon}>
-              <use href={`${sprite}#icon-facebook`} />
-            </svg>
-          </li>
-          <li>
-            <svg className={s.mediaIcon}>
-              <use href={`${sprite}#icon-youtube`} />
-            </svg>
-          </li>
-        </ul>
+          <ul className={s.mediaList}>
+            <li>
+              <svg className={s.mediaIcon}>
+                <use href={`${sprite}#icon-telegram`} />
+              </svg>
+            </li>
+            <li>
+              <svg className={s.mediaIcon}>
+                <use href={`${sprite}#icon-instagram`} />
+              </svg>
+            </li>
+            <li>
+              <svg className={s.mediaIcon}>
+                <use href={`${sprite}#icon-facebook`} />
+              </svg>
+            </li>
+            <li>
+              <svg className={s.mediaIcon}>
+                <use href={`${sprite}#icon-youtube`} />
+              </svg>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
