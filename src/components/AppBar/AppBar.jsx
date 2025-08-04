@@ -27,11 +27,7 @@ export default function AppBar() {
           </svg>
         </Link>
 
-        <div className={s.iconsContainer}>
-          <svg className={s.searchIcon}>
-            <use href={`${sprite}#icon-search `} />
-          </svg>
-
+        <div className={s.burger}>
           <button
             className={`${s.burgerBtn} ${isModalOpen ? s.open : ""}`}
             onClick={toggleModal}

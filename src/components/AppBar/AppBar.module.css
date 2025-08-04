@@ -12,11 +12,9 @@
   height: 46px;
 }
 
-.iconsContainer {
+.burger {
   display: flex;
-  gap: 27px;
   margin-left: auto;
-  align-items: center;
 }
 
 .burgerBtn {
@@ -54,4 +52,18 @@
 .burgerIcon {
   width: 21px;
   height: 21px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: none;
+    width: 768px;
+    padding: 14px 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1440px;
+  }
 }
