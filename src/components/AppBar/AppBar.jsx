@@ -3,6 +3,8 @@ import sprite from "../../assets/icons/sprite.svg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
+import BurgerButton from "../BurgerButton/BurgerButton";
+import Navigation from "../Navigation/Navigation";
 
 export default function AppBar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -27,17 +29,24 @@ export default function AppBar() {
           </svg>
         </Link>
 
-        <div className={s.burger}>
-          <button
-            className={`${s.burgerBtn} ${isModalOpen ? s.open : ""}`}
-            onClick={toggleModal}
-            aria-label="Open mobile menu"
-          >
-            <span className={s.burgerLine}></span>
-            <span className={s.burgerLine}></span>
-            <span className={s.burgerLine}></span>
+        <Navigation />
+
+        <div className={s.btnContainer}>
+          <button className={s.btnEnter}>
+            Увійти
+            <svg className={s.entranceIcon}>
+              <use href={`${sprite}#icon-entrance`} />
+            </svg>
+          </button>
+          <button className={s.btnDonation}>
+            Підтримати
+            <svg className={s.coinIcon}>
+              <use href={`${sprite}#icon-coin`} />
+            </svg>
           </button>
         </div>
+
+        <BurgerButton isOpen={isModalOpen} onClick={toggleModal} />
       </div>
 
       {showMenu && <BurgerMenu isOpen={isModalOpen} onClose={toggleModal} />}
