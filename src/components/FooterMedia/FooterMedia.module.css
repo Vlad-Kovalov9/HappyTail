@@ -1,0 +1,16 @@
+.mediaList {
+  display: flex;
+  gap: 34px;
+}
+
+.mediaIcon {
+  width: 38px;
+  height: 38px;
+  fill: #f9f9f5;
+}
+
+@media screen and (min-width: 1440px) {
+  .social {
+    margin-right: auto;
+  }
+}

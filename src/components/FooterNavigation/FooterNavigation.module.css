@@ -1,0 +1,30 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: center;
+}
+
+.link {
+  color: #f9f9f5;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.01em;
+  transition: color 0.3s ease;
+}
+
+.link:hover,
+.link:focus {
+  color: #fb8c00;
+}
+
+@media screen and (min-width: 768px) {
+  .navigation {
+    gap: 36px;
+    align-items: baseline;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+}

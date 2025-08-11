@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import { Suspense } from "react";
 import AppBar from "../AppBar/AppBar";
 import s from "./Layout.module.css";
+import Footer from "../Footer/Footer";
 
 export default function Layout() {
   return (
@@ -13,6 +14,8 @@ export default function Layout() {
           <Outlet />
         </Suspense>
       </main>
+
+      <Footer />
     </div>
   );
 }
