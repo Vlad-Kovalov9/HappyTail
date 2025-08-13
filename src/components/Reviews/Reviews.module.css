@@ -1,33 +1,36 @@
 .container {
   max-width: 390px;
-  padding: 0px 16px 52px;
+  padding: 0px 16px 80px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 20px;
 }
 
-.title {
+.titleMobile {
   font-weight: 600;
   font-size: 20px;
   line-height: 140%;
   letter-spacing: 0.01em;
   text-align: center;
+  color: #291f1b;
+}
+
+.title {
+  display: none;
 }
 
 .link {
+  display: block;
   font-weight: 500;
   font-size: 18px;
   line-height: 133%;
   letter-spacing: 0.01em;
   color: #f9f9f5;
-  border-radius: 14px;
   background-color: #bb5f65;
-  width: 100%;
+  padding: 10px 61px;
+  border-radius: 14px;
   text-align: center;
-  padding: 10px;
-  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
@@ -39,17 +42,27 @@
 @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
-    padding: 0px 20px 52px;
+    padding: 0px 20px 80px;
     gap: 40px;
   }
 
+  .titleMobile {
+    display: none;
+  }
+
   .title {
+    display: block;
+    font-weight: 600;
     font-size: 24px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: #291f1b;
   }
 
   .link {
-    padding: 16px;
-    width: 288px;
+    margin: 0 auto;
+    padding: 16px 30px;
   }
 }
 
@@ -64,6 +77,6 @@
   }
 
   .link {
-    width: 338px;
+    padding: 20px 40px;
   }
 }
