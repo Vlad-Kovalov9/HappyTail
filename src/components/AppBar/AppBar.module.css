@@ -34,6 +34,9 @@
   letter-spacing: 0.01em;
   color: #291f1b;
   transition: color 0.3s ease;
+  border: 1px solid #fb8c00;
+  padding: 10px;
+  border-radius: 14px;
 }
 
 .btnEnter:hover,

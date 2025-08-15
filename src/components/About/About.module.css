@@ -200,6 +200,11 @@
     margin-bottom: 32px;
   }
 
+  .wrapper {
+    gap: 20px;
+    align-items: center;
+  }
+
   .subtitle {
     font-size: 36px;
     max-width: 623px;

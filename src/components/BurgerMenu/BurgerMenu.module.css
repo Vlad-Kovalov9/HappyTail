@@ -82,6 +82,9 @@
   border: transparent;
   background: none;
   transition: color 0.3s ease;
+  border: 1px solid #fb8c00;
+  padding: 10px;
+  border-radius: 14px;
 }
 
 .btnEnter:hover,
@@ -102,7 +105,7 @@
   width: 167px;
   height: 39px;
   border-radius: 12px;
-  background-color: #bb5f65;
+  background-color: #00ad6f;
   border: none;
   transition: background-color 0.3s ease;
 }
