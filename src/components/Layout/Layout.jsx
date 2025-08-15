@@ -5,12 +5,14 @@ import s from "./Layout.module.css";
 import Footer from "../Footer/Footer";
 import Pets from "../Pets/Pets";
 import Reviews from "../Reviews/Reviews";
+import Hero from "../Hero/Hero";
 
 export default function Layout() {
   return (
     <div className={s.wrapper}>
       <AppBar />
 
+      <Hero />
       <Pets />
       <Reviews />
       <main className={s.layout}>

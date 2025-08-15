@@ -1,7 +1,7 @@
 .container {
   width: 100%;
   max-width: 390px;
-  padding: 40px 16px;
+  padding: 40px 16px 16px;
   display: flex;
   margin: 0 auto;
   align-items: center;
@@ -51,7 +51,7 @@
   line-height: 133%;
   letter-spacing: 0.01em;
   color: #f9f9f5;
-  background-color: #bb5f65;
+  background-color: #00ad6f;
 
   border: none;
   width: 206px;
