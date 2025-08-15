@@ -73,10 +73,8 @@
     background-image: url("/image/hero.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: calc(50% + 20px) center;
-    min-height: 373px;
+    background-position: center calc(50% - 30px);
     padding: 29px 20px 56px;
-
     align-items: flex-start;
   }
 

@@ -6,6 +6,7 @@ import Footer from "../Footer/Footer";
 import Pets from "../Pets/Pets";
 import Reviews from "../Reviews/Reviews";
 import Hero from "../Hero/Hero";
+import About from "../About/About";
 
 export default function Layout() {
   return (
@@ -13,6 +14,7 @@ export default function Layout() {
       <AppBar />
 
       <Hero />
+      <About />
       <Pets />
       <Reviews />
       <main className={s.layout}>
