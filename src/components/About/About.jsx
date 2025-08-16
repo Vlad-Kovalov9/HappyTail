@@ -3,6 +3,7 @@ import s from "./About.module.css";
 import aboutCat from "/image/aboutCat.jpg";
 import aboutDog from "/image/aboutDog.jpg";
 import aboutCatTablet from "/image/aboutCatTablet.jpg";
+import AboutCounter from "../AboutCounter/AboutCounter";
 
 export default function About() {
   return (
@@ -20,26 +21,7 @@ export default function About() {
       </div>
 
       <div className={s.info}>
-        <ul className={s.list}>
-          <li className={s.item}>
-            <span className={s.number}>1 284</span>
-            <p className={s.itemText}>хвостиків, що знайшли нову сім’ю</p>
-          </li>
-          <li className={s.item}>
-            <span className={s.number}>7</span>
-            <p className={s.itemText}>років досвіду турботи про тварин</p>
-          </li>
-          <li className={s.item}>
-            <span className={s.number}>632</span>
-            <p className={s.itemText}>
-              вакцинованих та стерилізованих хвостиків
-            </p>
-          </li>
-          <li className={s.item}>
-            <span className={s.number}>716</span>
-            <p className={s.itemText}>хвостиків шукають дім</p>
-          </li>
-        </ul>
+        <AboutCounter />
 
         <div className={s.textContainer}>
           <p className={s.text}>

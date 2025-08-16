@@ -26,40 +26,6 @@
   margin-top: 10px;
 }
 
-.list {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  align-items: center;
-  margin-top: 24px;
-}
-
-.item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-
-.number {
-  font-weight: 600;
-  font-size: 60px;
-  line-height: 140%;
-  letter-spacing: 0em;
-  text-align: center;
-  color: #00ad6f;
-}
-
-.itemText {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 140%;
-  letter-spacing: 0.01em;
-  text-align: center;
-  color: #291f1b;
-  max-width: 172px;
-}
-
 .text {
   font-weight: 400;
   font-size: 16px;
@@ -165,16 +131,6 @@
     gap: 30px;
   }
 
-  .list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .itemText {
-    max-width: 168px;
-    text-align: center;
-  }
-
   .link {
     width: 350px;
     margin: 32px auto 0;
@@ -222,20 +178,11 @@
   }
 
   .textContainer {
-    margin-top: 90px;
+    margin-top: 50px;
   }
 
   .info {
     justify-content: space-between;
     gap: 78px;
-  }
-
-  .number {
-    font-size: 80px;
-  }
-
-  .list {
-    margin-left: 30px;
-    gap: 60px 150px;
   }
 }

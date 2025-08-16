@@ -33,15 +33,27 @@
   line-height: 150%;
   letter-spacing: 0.01em;
   color: #291f1b;
-  transition: color 0.3s ease;
-  border: 1px solid #fb8c00;
-  padding: 10px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+  border: 1px solid #808080;
+
+  padding: 10px 14px;
   border-radius: 14px;
 }
 
 .btnEnter:hover,
 .btnEnter:focus {
+  border-color: #fb8c00;
   color: #fb8c00;
+}
+
+.entranceIcon {
+  fill: currentColor;
+  transition: transform 0.3s ease, fill 0.3s ease, border-color 0.3s ease;
+}
+
+.btnEnter:hover .entranceIcon,
+.btnEnter:focus .entranceIcon {
+  fill: #fb8c00;
 }
 
 .btnDonation {
