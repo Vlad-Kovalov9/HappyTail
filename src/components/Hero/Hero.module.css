@@ -1,6 +1,5 @@
 .container {
   max-width: 390px;
-  padding: 24px 16px 56px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -24,6 +23,7 @@
   text-align: center;
   max-width: 350px;
   color: #291f1b;
+  margin-top: 9px;
 }
 
 .subtitle {
@@ -74,8 +74,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center calc(50% - 30px);
-    padding: 29px 20px 56px;
     align-items: flex-start;
+    padding-top: 23px;
+    padding-bottom: 31px;
   }
 
   .imageMobile {
@@ -124,7 +125,7 @@
     max-width: 1440px;
     min-height: 620px;
     background-position: center calc(50% - 50px);
-    padding: 0px 80px 110px;
+    padding-bottom: 110px;
   }
 
   .title {
