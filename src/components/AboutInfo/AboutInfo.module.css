@@ -1,0 +1,168 @@
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.mainImage {
+  display: block;
+  width: 100%;
+  height: 324px;
+  object-fit: cover;
+  object-position: center;
+  margin: 0 auto;
+  border-radius: 14px;
+}
+
+.descriptionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.title,
+.startTitle {
+  font-style: italic;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: 0.01em;
+  max-width: 358px;
+  color: #291f1b;
+}
+
+.descriptionSubtitle,
+.startSubtitle {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0.01em;
+  max-width: 358px;
+  color: #291f1b;
+}
+
+.startBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 80px;
+}
+
+.descriptionTablet {
+  display: none;
+}
+
+.descriptionDesktop {
+  display: none;
+}
+
+.startDesktopSubtitle {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .info {
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-top: 32px;
+  }
+
+  .mainImage {
+    width: 320px;
+    height: 540px;
+    margin: 0;
+  }
+
+  .title {
+    font-size: 22px;
+    max-width: 400px;
+  }
+
+  .descriptionBlock {
+    display: none;
+  }
+
+  .descriptionTablet {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 18px;
+    color: #291f1b;
+  }
+
+  .subtitleTablet {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    max-width: 400px;
+  }
+
+  .startBlock {
+    gap: 4px;
+    margin-top: 24px;
+  }
+
+  .startSubtitle {
+    max-width: 410px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .info {
+    margin-top: 74px;
+  }
+
+  .mainImage {
+    width: 522px;
+    height: auto;
+  }
+
+  .title,
+  .startTitle {
+    font-size: 36px;
+    max-width: 630px;
+  }
+
+  .startBlock {
+    margin-top: 74px;
+  }
+
+  .descriptionTablet {
+    display: none;
+  }
+
+  .descriptionDesktop {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 32px;
+  }
+
+  .subtitleDesktop,
+  .startDesktopSubtitle {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    max-width: 630px;
+    color: #291f1b;
+  }
+
+  .startSubtitle {
+    display: none;
+  }
+
+  .startDesktopSubtitle {
+    display: block;
+  }
+
+  .startDesktopSubtitle {
+    margin-top: 30px;
+  }
+}

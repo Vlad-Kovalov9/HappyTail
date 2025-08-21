@@ -4,7 +4,7 @@ import s from "./Navigation.module.css";
 export default function Navigation() {
   return (
     <nav className={s.navigation}>
-      <NavLink to="/" className={s.link}>
+      <NavLink to="/about" className={s.link}>
         Про нас
       </NavLink>
 
