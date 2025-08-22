@@ -114,10 +114,6 @@
 }
 
 @media (min-width: 1440px) {
-  .info {
-    margin-top: 74px;
-  }
-
   .mainImage {
     width: 522px;
     height: auto;
