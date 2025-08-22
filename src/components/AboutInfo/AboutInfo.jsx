@@ -1,5 +1,5 @@
 import s from "./AboutInfo.module.css";
-import mainImage from "/image/About/AboutDog.jpg";
+import mainImage from "/image/AboutPage/AboutDog.jpg";
 
 export default function AboutInfo() {
   return (
