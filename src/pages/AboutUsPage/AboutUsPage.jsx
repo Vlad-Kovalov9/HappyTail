@@ -5,7 +5,7 @@ export default function AboutUsPage() {
   return (
     <>
       <AboutInfo />
-      {/* <AboutInfoCounter /> */}
+      <AboutInfoCounter />
     </>
   );
 }
