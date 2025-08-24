@@ -12,7 +12,7 @@ export default function Navigation() {
         Тварини
       </NavLink>
 
-      <NavLink to="/" className={s.link}>
+      <NavLink to="/contacts" className={s.link}>
         Контакти
       </NavLink>
 

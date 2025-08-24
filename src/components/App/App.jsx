@@ -6,6 +6,9 @@ const HomePage = lazy(() => import("../../pages/HomePage/HomePage.jsx"));
 const AboutUsPage = lazy(() =>
   import("../../pages/AboutUsPage/AboutUsPage.jsx")
 );
+const ContactsPage = lazy(() =>
+  import("../../pages/ContactsPage/ContactsPage.jsx")
+);
 
 export default function App() {
   return (
@@ -13,6 +16,7 @@ export default function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="about" element={<AboutUsPage />} />
+        <Route path="contacts" element={<ContactsPage />} />
       </Route>
     </Routes>
   );

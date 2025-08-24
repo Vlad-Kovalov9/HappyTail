@@ -1,0 +1,99 @@
+.icon {
+  width: 22px;
+  height: 22px;
+  fill: #00ad6f;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.itemHome {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.link {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.01em;
+  color: #291f1b;
+}
+
+.text {
+  display: block;
+}
+
+.addressesBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.address {
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.01em;
+  max-width: 298px;
+}
+
+@media screen and (min-width: 768px) {
+  .icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .info {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+
+  .link,
+  .address {
+    font-size: 18px;
+    line-height: 133%;
+    max-width: 418px;
+  }
+
+  .image {
+    max-width: 294px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .info {
+    flex-direction: column-reverse;
+    gap: 52px;
+  }
+
+  .image {
+    max-width: 522px;
+  }
+
+  .list {
+    gap: 36px;
+  }
+
+  .link,
+  .address {
+    font-size: 20px;
+  }
+}
