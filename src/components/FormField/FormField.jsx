@@ -21,7 +21,7 @@ export default function FormField({
       {label}
       <Field
         {...field}
-        className={fieldClass}
+        className={`${fieldClass} ${as === "textarea" ? s.textarea : ""}`}
         type={type}
         as={as}
         placeholder={placeholder}

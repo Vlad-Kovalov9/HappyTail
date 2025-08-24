@@ -7,8 +7,10 @@ export default function ContactsPage() {
     <div className={s.container}>
       <h2 className={s.title}>Напишіть нам або завітайте особисто</h2>
 
-      <ContactsInfo />
-      <ContactsForm />
+      <div className={s.components}>
+        <ContactsInfo />
+        <ContactsForm />
+      </div>
     </div>
   );
 }

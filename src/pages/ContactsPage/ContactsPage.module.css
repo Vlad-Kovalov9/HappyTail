@@ -1,3 +1,8 @@
+.container {
+  padding-top: 16px;
+  padding-bottom: 100px;
+}
+
 .title {
   font-style: italic;
   font-weight: 600;
@@ -9,17 +14,43 @@
   margin-bottom: 16px;
 }
 
+.components {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
 @media screen and (min-width: 768px) {
+  .container {
+    padding-top: 8px;
+    padding-bottom: 131px;
+  }
+
   .title {
     font-size: 22px;
     max-width: 469px;
     margin-bottom: 32px;
   }
+
+  .components {
+    gap: 58px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
+  .container {
+    padding-top: 49px;
+    padding-bottom: 181px;
+  }
+
   .title {
     font-size: 36px;
     max-width: 760px;
+  }
+
+  .components {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 }
