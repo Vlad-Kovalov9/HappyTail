@@ -1,0 +1,40 @@
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.01em;
+  color: #291f1b;
+}
+
+.field,
+.fieldError,
+.fieldValid {
+  border-radius: 14px;
+  border: 1px solid #6f6a6a;
+  padding: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.01em;
+  color: #291f1b;
+  transition: border 0.3s ease;
+}
+
+.error {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 171%;
+  letter-spacing: 0.01em;
+  color: #d93737;
+}
+
+.fieldError {
+  border: 1px solid #d93737;
+}
+
+.fieldValid {
+  border: 1px solid #00ad6f;
+}
