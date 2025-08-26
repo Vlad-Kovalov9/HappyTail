@@ -1,0 +1,46 @@
+.container {
+  padding-bottom: 100px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #291f1b;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #00ad6f;
+}
+
+.item {
+  border-bottom: 1px solid #00ad6f;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0.01e;
+  height: 80px;
+}
+
+.icon {
+  font-weight: 600;
+  font-size: 24px;
+  color: #fb8c00;
+  width: 1ch;
+}
+
+.content {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0.01em;
+  color: #291f1b;
+  max-width: 358px;
+  padding-bottom: 16px;
+}

@@ -1,0 +1,39 @@
+import { useState } from "react";
+import s from "./Accordion.module.css";
+import accordionData from "../../../accordionData.json";
+
+export default function Accordion() {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const toggleIndex = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  return (
+    <div className={s.container}>
+      <h2 className={s.title}>Часті запитання</h2>
+
+      <div className={s.accordion}>
+        {accordionData.map((item, index) => (
+          <div key={index} className={s.item}>
+            <div onClick={() => toggleIndex(index)} className={s.header}>
+              <span className={s.icon}>
+                {activeIndex === index ? "-" : "+"}
+              </span>
+              {item.question}
+            </div>
+            {activeIndex === index && (
+              <div
+                className={`${s.content} ${
+                  activeIndex === index ? s.open : ""
+                }`}
+              >
+                {item.answer}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
