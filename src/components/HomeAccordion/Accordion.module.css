@@ -20,19 +20,23 @@
 .header {
   display: flex;
   align-items: center;
-  gap: 8px;
   font-weight: 600;
   font-size: 18px;
   line-height: 140%;
-  letter-spacing: 0.01e;
+  letter-spacing: 0.01em;
   height: 80px;
+  max-width: 358px;
+  gap: 8px;
+  cursor: pointer;
 }
 
 .icon {
+  flex-shrink: 0;
+  width: 37px;
+  text-align: center;
   font-weight: 600;
   font-size: 24px;
   color: #fb8c00;
-  width: 1ch;
 }
 
 .content {
@@ -42,5 +46,55 @@
   letter-spacing: 0.01em;
   color: #291f1b;
   max-width: 358px;
-  padding-bottom: 16px;
+
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+  padding-bottom: 0;
+}
+
+.content.open {
+  opacity: 1;
+}
+
+.contentInner {
+  padding: 0 0 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding-bottom: 131px;
+  }
+
+  .title {
+    font-size: 24px;
+    padding-bottom: 40px;
+  }
+
+  .header {
+    max-width: none;
+  }
+
+  .content {
+    max-width: 730px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    padding-bottom: 174px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .header {
+    font-size: 20px;
+  }
+
+  .content {
+    max-width: 1202px;
+  }
 }

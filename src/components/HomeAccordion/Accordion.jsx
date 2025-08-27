@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import s from "./Accordion.module.css";
 import accordionData from "../../../accordionData.json";
 
 export default function Accordion() {
   const [activeIndex, setActiveIndex] = useState(null);
+  const contentRefs = useRef([]); // масив для посилань на елементи
 
   const toggleIndex = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -22,15 +23,18 @@ export default function Accordion() {
               </span>
               {item.question}
             </div>
-            {activeIndex === index && (
-              <div
-                className={`${s.content} ${
-                  activeIndex === index ? s.open : ""
-                }`}
-              >
-                {item.answer}
-              </div>
-            )}
+            <div
+              ref={(el) => (contentRefs.current[index] = el)}
+              className={`${s.content} ${activeIndex === index ? s.open : ""}`}
+              style={{
+                maxHeight:
+                  activeIndex === index
+                    ? contentRefs.current[index]?.scrollHeight + "px"
+                    : "0px",
+              }}
+            >
+              <div className={s.contentInner}>{item.answer}</div>
+            </div>
           </div>
         ))}
       </div>
