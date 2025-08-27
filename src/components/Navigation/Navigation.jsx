@@ -16,7 +16,7 @@ export default function Navigation() {
         Контакти
       </NavLink>
 
-      <NavLink to="/" className={s.link}>
+      <NavLink to="/blog" className={s.link}>
         Блог
       </NavLink>
 

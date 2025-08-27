@@ -44,7 +44,7 @@ export default function BurgerMenu({ isOpen, onClose }) {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/" className={s.link} onClick={onClose}>
+              <NavLink to="/blog" className={s.link} onClick={onClose}>
                 Блог
               </NavLink>
             </li>

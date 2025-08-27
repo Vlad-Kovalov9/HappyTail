@@ -4,7 +4,7 @@ import accordionData from "../../../accordionData.json";
 
 export default function Accordion() {
   const [activeIndex, setActiveIndex] = useState(null);
-  const contentRefs = useRef([]); // масив для посилань на елементи
+  const contentRefs = useRef([]);
 
   const toggleIndex = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
