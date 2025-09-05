@@ -10,8 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "dotenv": "^17.2.2",
     "formik": "^2.4.6",
     "modern-normalize": "^3.0.1",
+    "mongoose": "^8.18.0",
     "react": "^19.1.0",
     "react-countup": "^6.5.3",
     "react-dom": "^19.1.0",
