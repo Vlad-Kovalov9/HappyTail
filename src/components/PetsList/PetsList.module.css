@@ -1,11 +1,14 @@
 .list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(171px, 1fr));
   gap: 16px;
 }
 
 .image {
   border-radius: 4px;
+  width: 155px;
+  height: 132px;
+  object-fit: cover;
 }
 
 .item {
@@ -14,11 +17,6 @@
   padding: 8px;
   display: flex;
   flex-direction: column;
-  position: relative;
-}
-
-.imageWrapper {
-  position: relative;
 }
 
 .name {
@@ -37,84 +35,34 @@
   line-height: 171%;
   letter-spacing: 0.01em;
   color: #291f1b;
-  border: 1px solid #a5a4a4;
-  border-radius: 14px;
-  padding: 4px 8px;
 }
 
-.btn {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 171%;
-  letter-spacing: 0.01em;
-  text-align: center;
-  color: #f9f9f5;
-  border-radius: 14px;
-  background-color: #00ad6f;
-  border: none;
-  padding: 6px;
-  width: 158px;
-  height: 35px;
-  transition: background-color 0.3s ease;
-}
-
-.btn:hover,
-.btn:focus {
-  background-color: #fb8c00;
-}
-
-.textContainer {
+.textList {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: flex-start;
-  gap: 6px;
+  gap: 4px;
   margin-top: 8px;
 }
 
+.textItem {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  border: 1px solid #a5a4a4;
+  border-radius: 14px;
+  padding: 3px 2px;
+  border-color: #00ad6f;
+}
+
 .icon {
-  width: 25px;
-  height: 22px;
-  fill: #f9f9f5;
-}
-
-.btnBox {
-  margin-top: 12px;
-}
-
-.iconBtn {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background: transparent;
-  border: none;
-  padding: 0;
-}
-
-.btnDesk {
-  display: none;
+  width: 18px;
+  height: 18px;
 }
 
 @media (min-width: 768px) {
-  .iconBtn {
-    display: none;
-  }
-
-  .btnDesk {
-    display: block;
-    background-color: transparent;
-    border: none;
-  }
-
-  .btnBox {
-    display: flex;
-    gap: 22px;
-    align-items: center;
-    justify-content: center;
-    margin-top: 16px;
-  }
-
   .list {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(229px, 1fr));
   }
 
   .name {
@@ -125,28 +73,31 @@
   }
 
   .text {
-    font-size: 14px;
-    line-height: 171%;
+    font-size: 16px;
+    line-height: 150%;
   }
 
   .item {
     padding: 12px;
   }
 
-  .textContainer {
-    flex-direction: row;
+  .textList {
+    gap: 8px;
   }
 
-  .iconDesk {
-    width: 25px;
-    height: 22px;
-    fill: #bb5f65;
+  .textItem {
+    padding: 4px;
+  }
+
+  .image {
+    width: 208px;
+    height: 207px;
   }
 }
 
 @media (min-width: 1440px) {
   .list {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(305px, 1fr));
   }
 
   .name {
@@ -155,29 +106,22 @@
     margin-top: 10px;
   }
 
-  .btn {
-    font-size: 18px;
-    line-height: 133%;
-    padding: 8px;
-    width: 211px;
-    height: 40px;
-  }
-
   .item {
     padding: 16px;
   }
 
-  .icon,
-  .iconDesk {
-    width: 41px;
-    height: 37px;
-  }
-
-  .textContainer {
+  .textList {
     margin-top: 12px;
+    justify-content: space-between;
+    gap: 0px;
   }
 
-  .btnBox {
-    margin-top: 18px;
+  .textItem {
+    padding: 4px 6px;
+  }
+
+  .image {
+    width: 273px;
+    height: 254px;
   }
 }

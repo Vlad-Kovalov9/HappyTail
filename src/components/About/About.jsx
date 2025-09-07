@@ -44,7 +44,7 @@ export default function About() {
         </div>
       </div>
 
-      <NavLink to="/" className={s.link}>
+      <NavLink to="/about" className={s.link}>
         Читати більше
       </NavLink>
     </div>

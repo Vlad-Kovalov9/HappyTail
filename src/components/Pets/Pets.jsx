@@ -6,6 +6,7 @@ import PetsList from "../PetsList/PetsList";
 export default function Pets() {
   const [petsData, setPetsData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [visibleCount, setVisibleCount] = useState(8);
 
   useEffect(() => {
     const fetchPets = async () => {
@@ -23,13 +24,28 @@ export default function Pets() {
     fetchPets();
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 1440) {
+        setVisibleCount(6);
+      } else {
+        setVisibleCount(8);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   if (loading) return <p>Завантаження...</p>;
 
   return (
     <div className={s.container}>
       <h2 className={s.title}>Ці хвостики чекають на вас</h2>
 
-      <PetsList data={petsData} />
+      <PetsList data={petsData.slice(0, visibleCount)} />
 
       <NavLink to="/" className={s.link}>
         Подивитися всіх

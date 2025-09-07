@@ -184,4 +184,8 @@
     justify-content: space-between;
     gap: 78px;
   }
+
+  .link {
+    font-size: 18px;
+  }
 }

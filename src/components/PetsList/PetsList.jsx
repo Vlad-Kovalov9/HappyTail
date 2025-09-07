@@ -5,28 +5,30 @@ export default function PetsList({ data }) {
   return (
     <ul className={s.list}>
       {data.map((pet) => (
-        <li key={pet.id} className={s.item}>
-          <div className={s.imageWrapper}>
-            <img src={pet.image} className={s.image} alt={`Фото ${pet.name}`} />
-            <button className={s.iconBtn}>
-              <svg className={s.icon}>
-                <use href={`${sprite}#icon-heart`} />
-              </svg>
-            </button>
-          </div>
+        <li key={pet._id} className={s.item}>
+          <img src={pet.image} className={s.image} alt={`Фото ${pet.name}`} />
+
           <h3 className={s.name}>{pet.name}</h3>
-          <div className={s.textContainer}>
-            <p className={s.text}>{pet.gender}</p>
-            <p className={s.text}>{pet.age}</p>
-          </div>
-          <div className={s.btnBox}>
-            <button className={s.btn}>Усиновити</button>
-            <button className={s.btnDesk}>
-              <svg className={s.iconDesk}>
-                <use href={`${sprite}#icon-heart`} />
+          <ul className={s.textList}>
+            <li className={s.textItem}>
+              <svg className={s.icon}>
+                <use href={`${sprite}#icon-pets-gender`} />
               </svg>
-            </button>
-          </div>
+              <p className={s.text}>{pet.gender}</p>
+            </li>
+            <li className={s.textItem}>
+              <svg className={s.icon}>
+                <use href={`${sprite}#icon-pets-age`} />
+              </svg>
+              <p className={s.text}> {pet.age}</p>
+            </li>
+            <li className={s.textItem}>
+              <svg className={s.icon}>
+                <use href={`${sprite}#icon-pets-location`} />
+              </svg>
+              <p className={s.text}>{pet.city}</p>
+            </li>
+          </ul>
         </li>
       ))}
     </ul>
