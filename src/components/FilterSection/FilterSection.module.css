@@ -1,0 +1,50 @@
+.filterSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #c3c3c3;
+  width: 100%;
+}
+
+.sectionHeader {
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 133%;
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.leftSide {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  width: 22px;
+  height: 24px;
+  fill: #00ad6f;
+}
+
+.iconUpDown {
+  width: 14px;
+  height: 10px;
+}
+
+.iconSpan {
+  margin-left: auto;
+}

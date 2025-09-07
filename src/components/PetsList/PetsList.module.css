@@ -58,6 +58,7 @@
 .icon {
   width: 18px;
   height: 18px;
+  fill: #fb8c00;
 }
 
 @media (min-width: 768px) {

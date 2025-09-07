@@ -8,7 +8,7 @@ export default function Navigation() {
         Про нас
       </NavLink>
 
-      <NavLink to="/" className={s.link}>
+      <NavLink to="/pets" className={s.link}>
         Тварини
       </NavLink>
 

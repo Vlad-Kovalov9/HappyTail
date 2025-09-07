@@ -1,0 +1,61 @@
+.label {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.checkbox {
+  width: 15px;
+  height: 15px;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-top: 10px;
+}
+
+.btnApply {
+  border-radius: 14px;
+  padding: 12px;
+  background: linear-gradient(134deg, #00ad6f 11.25%, #2cac7e 100%);
+  border: none;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 133%;
+  letter-spacing: 0.01em;
+  color: #f9f9f5;
+}
+
+.btnApply:hover,
+.btnApply:focus {
+  background: linear-gradient(134deg, #ad9c00 11.25%, #2cac7e 100%);
+}
+
+.btnReset {
+  border-radius: 14px;
+  padding: 10px;
+  border: 1px solid #04915f;
+  background: transparent;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 133%;
+  letter-spacing: 0.01em;
+}
+
+.btnReset:hover,
+.btnReset:focus {
+  background: linear-gradient(134deg, #00ad6f 11.25%, #2cac7e 100%);
+  color: #f9f9f5;
+}

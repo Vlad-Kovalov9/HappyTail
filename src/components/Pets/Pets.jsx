@@ -47,7 +47,7 @@ export default function Pets() {
 
       <PetsList data={petsData.slice(0, visibleCount)} />
 
-      <NavLink to="/" className={s.link}>
+      <NavLink to="/pets" className={s.link}>
         Подивитися всіх
       </NavLink>
     </div>
