@@ -1,0 +1,58 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-start;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal {
+  background-color: #f9f9f5;
+  max-width: 390px;
+  width: 100%;
+  height: 100%;
+  padding: 60px 30px 20px;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-y: auto;
+}
+
+.backdrop.open .modal {
+  transform: translateX(0);
+}
+.icon {
+  width: 18px;
+  height: 18px;
+}
+.closeBtn {
+  background: transparent;
+  border: none;
+  margin-left: auto;
+  padding-bottom: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    max-width: 480px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .backdrop {
+    display: none;
+  }
+}
