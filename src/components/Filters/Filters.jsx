@@ -2,16 +2,11 @@ import s from "./Filters.module.css";
 import { Formik, Form, Field } from "formik";
 import FilterSection from "../FilterSection/FilterSection";
 
-export default function Filters({ onApply }) {
+export default function Filters({ onApply, onReset, values }) {
   return (
     <Formik
-      initialValues={{
-        city: [],
-        pet: [],
-        gender: "",
-        age: [],
-        sterilization: "",
-      }}
+      initialValues={values}
+      enableReinitialize
       onSubmit={(values) => onApply(values)}
     >
       {({ resetForm }) => (
@@ -111,6 +106,15 @@ export default function Filters({ onApply }) {
               <Field
                 type="checkbox"
                 name="age"
+                value="0 - 1"
+                className={s.checkbox}
+              />
+              Менше 1
+            </label>
+            <label className={s.label}>
+              <Field
+                type="checkbox"
+                name="age"
                 value="1 - 2"
                 className={s.checkbox}
               />
@@ -129,10 +133,10 @@ export default function Filters({ onApply }) {
               <Field
                 type="checkbox"
                 name="age"
-                value="4 +"
+                value="5 +"
                 className={s.checkbox}
               />
-              4 +
+              5 +
             </label>
           </FilterSection>
 
@@ -164,7 +168,10 @@ export default function Filters({ onApply }) {
             <button
               type="button"
               className={s.btnReset}
-              onClick={() => resetForm()}
+              onClick={() => {
+                resetForm();
+                onReset && onReset();
+              }}
             >
               Очистити
             </button>

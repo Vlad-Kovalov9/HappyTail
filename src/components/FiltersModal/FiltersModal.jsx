@@ -2,7 +2,13 @@ import Filters from "../Filters/Filters";
 import s from "./FiltersModal.module.css";
 import sprite from "../../assets/icons/sprite.svg";
 
-export default function FiltersModal({ isOpen, onClose }) {
+export default function FiltersModal({
+  isOpen,
+  onClose,
+  onApply,
+  onReset,
+  values,
+}) {
   if (!isOpen) return null;
 
   return (
@@ -13,7 +19,14 @@ export default function FiltersModal({ isOpen, onClose }) {
             <use href={`${sprite}#icon-close`} />
           </svg>
         </button>
-        <Filters />
+        <Filters
+          values={values}
+          onApply={(filters) => {
+            onApply(filters);
+            onClose();
+          }}
+          onReset={onReset}
+        />
       </div>
     </div>
   );
