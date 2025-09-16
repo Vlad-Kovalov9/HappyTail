@@ -1,11 +1,12 @@
 import s from "./PetDetailsPage.module.css";
 import sprite from "../../assets/icons/sprite.svg";
 import { useEffect, useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function PetDetailsPage() {
   const { id } = useParams();
   const [pet, setPet] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchPet = async () => {
@@ -20,12 +21,12 @@ export default function PetDetailsPage() {
 
   return (
     <div className={s.container}>
-      <NavLink to="/pets" className={s.link}>
+      <button type="button" className={s.link} onClick={() => navigate(-1)}>
         <svg className={s.iconBack}>
           <use href={`${sprite}#icon-backPage`} />
         </svg>
-        <span>Назад до хвостиків</span>
-      </NavLink>
+        <span>Назад</span>
+      </button>
       <div className={s.infoContainer}>
         <img src={pet.image} alt={`${pet.name} Фото`} className={s.image} />
         <div className={s.featureContainer}>

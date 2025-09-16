@@ -16,7 +16,7 @@ export default function Hero() {
             Happy Хвіст — тут знаходять справжніх друзів
           </p>
 
-          <NavLink to="/" className={s.link}>
+          <NavLink to="/pets" className={s.link}>
             Знайти друга
           </NavLink>
         </div>
