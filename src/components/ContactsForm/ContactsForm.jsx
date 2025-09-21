@@ -4,12 +4,13 @@ import FormField from "../FormField/FormField";
 import { MaskedField } from "../FormField/MaskedField";
 import { contactValidationSchema } from "../../../validationSchema.js";
 
-const handleSubmit = (values, { resetForm }) => {
-  console.log("Форма відправлена ", values);
-  resetForm();
-};
+export default function ContactsForm({ onSuccess }) {
+  const handleSubmit = (values, { resetForm }) => {
+    console.log("Форма відправлена ", values);
+    resetForm();
+    if (onSuccess) onSuccess();
+  };
 
-export default function ContactsForm() {
   return (
     <div className={s.container}>
       <h2 className={s.title}>Зв’яжіться з нами</h2>
