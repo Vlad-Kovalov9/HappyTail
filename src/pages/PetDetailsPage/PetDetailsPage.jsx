@@ -2,10 +2,13 @@ import s from "./PetDetailsPage.module.css";
 import sprite from "../../assets/icons/sprite.svg";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import PetDetailsMessage from "../../components/PetDetailsMessage/PetDetailsMessage";
 
 export default function PetDetailsPage() {
   const { id } = useParams();
   const [pet, setPet] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -79,7 +82,7 @@ export default function PetDetailsPage() {
           <div className={s.hideMobile}>
             <h3 className={s.text}>Особливості поведінки</h3>
             <p className={s.description}>{pet.description}</p>
-            <button className={s.button}>
+            <button className={s.button} onClick={() => setIsModalOpen(true)}>
               <span>Усиновити</span>
               <svg className={s.iconHeart}>
                 <use href={`${sprite}#icon-pets-heart`} />
@@ -91,7 +94,7 @@ export default function PetDetailsPage() {
         <div className={s.hideDesktop}>
           <h3 className={s.text}>Особливості поведінки</h3>
           <p className={s.description}>{pet.description}</p>
-          <button className={s.button}>
+          <button className={s.button} onClick={() => setIsModalOpen(true)}>
             <span>Усиновити</span>
             <svg className={s.iconHeart}>
               <use href={`${sprite}#icon-pets-heart`} />
@@ -99,6 +102,9 @@ export default function PetDetailsPage() {
           </button>
         </div>
       </div>
+      {isModalOpen && (
+        <PetDetailsMessage onClose={() => setIsModalOpen(false)} />
+      )}
     </div>
   );
 }

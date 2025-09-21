@@ -66,18 +66,21 @@
   line-height: 133%;
   letter-spacing: 0.01em;
   color: #f9f9f5;
-  background-color: #00ad6f;
-
   border: none;
   width: 206px;
   height: 44px;
   border-radius: 12px;
-  transition: background-color 0.3s ease;
+  background: linear-gradient(90deg, #04915f 0%, #2cac7e 50%, #2fbe66 100%);
+  background-size: 200% 100%;
+  transition: background-position 0.45s ease, transform 0.18s ease,
+    box-shadow 0.18s ease;
 }
 
 .btnDonation:hover,
 .btnDonation:focus {
-  background-color: #fb8c00;
+  background-position: 100% 0;
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.14);
 }
 
 @media screen and (min-width: 768px) {
