@@ -14,6 +14,7 @@ const PetsPage = lazy(() => import("../../pages/PetsPage/PetsPage.jsx"));
 const PetDetailsPage = lazy(() =>
   import("../../pages/PetDetailsPage/PetDetailsPage.jsx")
 );
+const LoginPage = lazy(() => import("../../pages/LoginPage/LoginPage.jsx"));
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="pets/:id" element={<PetDetailsPage />} />
         <Route path="contacts" element={<ContactsPage />} />
         <Route path="blog" element={<BlogPage />} />
+        <Route path="login" element={<LoginPage />} />
       </Route>
     </Routes>
   );

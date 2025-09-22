@@ -1,6 +1,6 @@
 import s from "./AppBar.module.css";
 import sprite from "../../assets/icons/sprite.svg";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import BurgerButton from "../BurgerButton/BurgerButton";
@@ -32,18 +32,18 @@ export default function AppBar() {
         <Navigation />
 
         <div className={s.btnContainer}>
-          <button className={s.btnEnter}>
+          <NavLink to="/login" className={s.btnEnter}>
             Увійти
             <svg className={s.entranceIcon}>
               <use href={`${sprite}#icon-entrance`} />
             </svg>
-          </button>
-          <button className={s.btnDonation}>
+          </NavLink>
+          <NavLink className={s.btnDonation}>
             Підтримати
             <svg className={s.coinIcon}>
               <use href={`${sprite}#icon-coin`} />
             </svg>
-          </button>
+          </NavLink>
         </div>
 
         <BurgerButton isOpen={isModalOpen} onClick={toggleModal} />
