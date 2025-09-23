@@ -24,7 +24,7 @@
   letter-spacing: 0.01em;
   text-align: center;
   color: #291f1b;
-  max-width: 250px;
+  max-width: 334px;
   margin: 7px auto 0;
 }
 
@@ -174,9 +174,5 @@
   .iconMail {
     width: 20px;
     height: 18px;
-  }
-
-  .text {
-    max-width: 440px;
   }
 }

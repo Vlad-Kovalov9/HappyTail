@@ -34,6 +34,11 @@ export const loginValidationSchema = Yup.object().shape({
 });
 
 export const registerValidationSchema = Yup.object().shape({
+  name: Yup.string()
+    .matches(/^[А-Яа-яІіЇїЄєҐґA-Za-z\s'-]+$/, "Ім’я може містити лише літери")
+    .min(3, "Мінімум 3 символи")
+    .max(30, "Максимум 30 символів")
+    .required("Це поле є обов’язковим"),
   email: Yup.string()
     .email("Невірний формат email (приклад: name@gmail.com)")
     .required("Введіть вашу пошту"),
