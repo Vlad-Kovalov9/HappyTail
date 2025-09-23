@@ -2,7 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import s from "./ContactsForm.module.css";
 import FormField from "../FormField/FormField";
 import { MaskedField } from "../FormField/MaskedField";
-import { contactValidationSchema } from "../../../validationSchema.js";
+import { contactValidationSchema } from "../../../validation/validationSchema.js";
 
 export default function ContactsForm({ onSuccess }) {
   const handleSubmit = (values, { resetForm }) => {

@@ -38,7 +38,7 @@ export default function AppBar() {
               <use href={`${sprite}#icon-entrance`} />
             </svg>
           </NavLink>
-          <NavLink className={s.btnDonation}>
+          <NavLink to="/donate" className={s.btnDonation}>
             Підтримати
             <svg className={s.coinIcon}>
               <use href={`${sprite}#icon-coin`} />

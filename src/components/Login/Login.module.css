@@ -1,0 +1,178 @@
+.container {
+  padding-top: 20px;
+  padding-bottom: 100px;
+}
+
+.content {
+  border: 1px solid #00ad6f;
+  border-radius: 14px;
+  padding: 23px 10px;
+}
+
+.title {
+  font-size: 24px;
+  line-height: 140%;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #291f1b;
+}
+
+.text {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #291f1b;
+  max-width: 250px;
+  margin: 7px auto 0;
+}
+
+.linkRegister {
+  font-weight: 600;
+  color: #fb8c00;
+  margin-left: 6px;
+}
+
+.form {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.01em;
+  color: #6f6a6a;
+  border: 1px solid #6f6a6a;
+  border-radius: 14px;
+  padding: 10px;
+  width: 100%;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.btnToggle {
+  position: absolute;
+  right: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-40%);
+}
+
+.icon {
+  width: 20px;
+  height: 16px;
+  fill: #00ad6f;
+  pointer-events: none;
+}
+
+.iconMail {
+  width: 18px;
+  height: 16px;
+  fill: #00ad6f;
+  pointer-events: none;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.linkReset {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 171%;
+  letter-spacing: 0.01em;
+  color: #d93737;
+}
+
+.button {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 171%;
+  letter-spacing: 0.01em;
+  border-radius: 14px;
+  padding: 10px;
+  color: #f9f9f5;
+  border: 1px solid #04915f;
+  background: linear-gradient(90deg, #04915f 0%, #2cac7e 50%, #2fbe66 100%);
+  background-size: 200% 100%;
+  transition: background-position 0.45s ease, transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.button:hover,
+.button:focus {
+  background-position: 100% 0;
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.14);
+}
+
+.error {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 171%;
+  letter-spacing: 0.01em;
+  color: #d93737;
+  margin-top: -12px;
+}
+
+.image {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    background-image: url("/image/registerDog.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 88px;
+    padding-bottom: 88px;
+  }
+
+  .content {
+    max-width: 400px;
+    padding: 40px 53px;
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    padding-top: 137px;
+    padding-bottom: 137px;
+  }
+
+  .content {
+    max-width: 638px;
+    padding: 40px 58px;
+    margin-left: auto;
+  }
+
+  .button {
+    font-size: 18px;
+  }
+
+  .icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .iconMail {
+    width: 20px;
+    height: 18px;
+  }
+}

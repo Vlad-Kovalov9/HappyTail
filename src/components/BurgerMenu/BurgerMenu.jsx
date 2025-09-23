@@ -56,18 +56,18 @@ export default function BurgerMenu({ isOpen, onClose }) {
           </ul>
 
           <div className={s.btnContainer}>
-            <button className={s.btnEnter}>
+            <NavLink to="/login" className={s.btnEnter} onClick={onClose}>
               Увійти
               <svg className={s.entranceIcon}>
                 <use href={`${sprite}#icon-entrance`} />
               </svg>
-            </button>
-            <button className={s.btnDonation}>
+            </NavLink>
+            <NavLink to="/donate" className={s.btnDonation} onClick={onClose}>
               Підтримати
               <svg className={s.coinIcon}>
                 <use href={`${sprite}#icon-coin`} />
               </svg>
-            </button>
+            </NavLink>
           </div>
 
           <ul className={s.mediaList}>
