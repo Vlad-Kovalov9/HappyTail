@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Layout from "../Layout/Layout";
 import { lazy } from "react";
+import { useAutoRefreshToken } from "../../hooks/useAutoRefreshToken.js";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage.jsx"));
 const AboutUsPage = lazy(() =>
@@ -20,6 +21,8 @@ const RegisterPage = lazy(() =>
 );
 
 export default function App() {
+  useAutoRefreshToken();
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>

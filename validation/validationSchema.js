@@ -48,4 +48,7 @@ export const registerValidationSchema = Yup.object().shape({
     .matches(/[A-Z]/, "Пароль повинен містити хоча б одну велику літеру")
     .matches(/\d/, "Пароль повинен містити хоча б одну цифру")
     .required("Введіть пароль"),
+  confirmPassword: Yup.string()
+    .oneOf([Yup.ref("password"), null], "Паролі повинні збігатися")
+    .required("Повторіть пароль"),
 });

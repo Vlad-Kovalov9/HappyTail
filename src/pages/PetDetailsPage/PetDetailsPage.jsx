@@ -2,13 +2,17 @@ import s from "./PetDetailsPage.module.css";
 import sprite from "../../assets/icons/sprite.svg";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 import PetDetailsMessage from "../../components/PetDetailsMessage/PetDetailsMessage";
+import AuthRequiredModal from "../../components/AuthRequiredModal/AuthRequiredModal";
 
 export default function PetDetailsPage() {
   const { id } = useParams();
   const [pet, setPet] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalType, setModalType] = useState("");
 
+  const { token } = useSelector((state) => state.user);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,6 +26,20 @@ export default function PetDetailsPage() {
 
   if (!pet) return <p>Завантаження...</p>;
 
+  const handleAdoptClick = () => {
+    if (token) {
+      setModalType("details");
+    } else {
+      setModalType("auth");
+    }
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setModalType("");
+  };
+
   return (
     <div className={s.container}>
       <button type="button" className={s.link} onClick={() => navigate(-1)}>
@@ -30,8 +48,10 @@ export default function PetDetailsPage() {
         </svg>
         <span>Назад</span>
       </button>
+
       <div className={s.infoContainer}>
         <img src={pet.image} alt={`${pet.name} Фото`} className={s.image} />
+
         <div className={s.featureContainer}>
           <h2 className={s.name}>{pet.name}</h2>
 
@@ -45,7 +65,6 @@ export default function PetDetailsPage() {
               </p>
               <p className={s.itemInfo}>{pet.gender}</p>
             </li>
-
             <li className={s.item}>
               <p className={s.itemFeature}>
                 <svg className={s.icon}>
@@ -55,7 +74,6 @@ export default function PetDetailsPage() {
               </p>
               <p className={s.itemInfo}>{pet.age}</p>
             </li>
-
             <li className={s.item}>
               <p className={s.itemFeature}>
                 <svg className={s.icon}>
@@ -65,7 +83,6 @@ export default function PetDetailsPage() {
               </p>
               <p className={s.itemInfo}>{pet.city}</p>
             </li>
-
             <li className={s.item}>
               <p className={s.itemFeature}>
                 <svg className={s.icon}>
@@ -82,7 +99,7 @@ export default function PetDetailsPage() {
           <div className={s.hideMobile}>
             <h3 className={s.text}>Особливості поведінки</h3>
             <p className={s.description}>{pet.description}</p>
-            <button className={s.button} onClick={() => setIsModalOpen(true)}>
+            <button className={s.button} onClick={handleAdoptClick}>
               <span>Усиновити</span>
               <svg className={s.iconHeart}>
                 <use href={`${sprite}#icon-pets-heart`} />
@@ -94,7 +111,7 @@ export default function PetDetailsPage() {
         <div className={s.hideDesktop}>
           <h3 className={s.text}>Особливості поведінки</h3>
           <p className={s.description}>{pet.description}</p>
-          <button className={s.button} onClick={() => setIsModalOpen(true)}>
+          <button className={s.button} onClick={handleAdoptClick}>
             <span>Усиновити</span>
             <svg className={s.iconHeart}>
               <use href={`${sprite}#icon-pets-heart`} />
@@ -102,8 +119,12 @@ export default function PetDetailsPage() {
           </button>
         </div>
       </div>
-      {isModalOpen && (
-        <PetDetailsMessage onClose={() => setIsModalOpen(false)} />
+
+      {isModalOpen && modalType === "details" && (
+        <PetDetailsMessage onClose={closeModal} />
+      )}
+      {isModalOpen && modalType === "auth" && (
+        <AuthRequiredModal onClose={closeModal} />
       )}
     </div>
   );

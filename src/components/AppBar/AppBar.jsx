@@ -5,10 +5,12 @@ import { useState } from "react";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import BurgerButton from "../BurgerButton/BurgerButton";
 import Navigation from "../Navigation/Navigation";
+import { useSelector } from "react-redux";
 
 export default function AppBar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const { token } = useSelector((state) => state.user);
 
   const toggleModal = () => {
     if (isModalOpen) {
@@ -32,12 +34,15 @@ export default function AppBar() {
         <Navigation />
 
         <div className={s.btnContainer}>
-          <NavLink to="/login" className={s.btnEnter}>
-            Увійти
-            <svg className={s.entranceIcon}>
-              <use href={`${sprite}#icon-entrance`} />
-            </svg>
-          </NavLink>
+          {!token && (
+            <NavLink to="/login" className={s.btnEnter}>
+              Увійти
+              <svg className={s.entranceIcon}>
+                <use href={`${sprite}#icon-entrance`} />
+              </svg>
+            </NavLink>
+          )}
+
           <NavLink to="/donate" className={s.btnDonation}>
             Підтримати
             <svg className={s.coinIcon}>

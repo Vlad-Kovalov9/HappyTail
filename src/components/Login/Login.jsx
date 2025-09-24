@@ -1,16 +1,46 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import s from "./Login.module.css";
 import { loginValidationSchema } from "../../../validation/validationSchema.js";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import sprite from "../../assets/icons/sprite.svg";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../redux/store/userSlice.js";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const handleSubmit = (values, { resetForm }) => {
-    console.log("Форма відправлена", values);
-    resetForm();
+  const handleSubmit = async (values, { resetForm }) => {
+    try {
+      const res = await fetch("http://localhost:5000/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        alert(data.message || "Помилка входу");
+        return;
+      }
+
+      dispatch(
+        setUser({
+          user: data.user,
+          token: data.accessToken,
+          refreshToken: data.refreshToken,
+        })
+      );
+
+      resetForm();
+      navigate("/");
+    } catch (error) {
+      alert("Сервер недоступний");
+      console.log(error);
+    }
   };
 
   return (
@@ -73,7 +103,7 @@ export default function Login() {
               Забули пароль?
             </NavLink>
 
-            <button type="submit" className={s.button} onSubmit={handleSubmit}>
+            <button type="submit" className={s.button}>
               Увійти
             </button>
           </Form>
