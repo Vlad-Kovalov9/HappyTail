@@ -1,9 +1,16 @@
 import s from "./BurgerMenu.module.css";
 import sprite from "../../assets/icons/sprite.svg";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Logout from "../Logout/Logout";
+import { logout } from "../../redux/store/userSlice";
 
 export default function BurgerMenu({ isOpen, onClose }) {
+  const { token, user } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -18,6 +25,11 @@ export default function BurgerMenu({ isOpen, onClose }) {
 
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) onClose();
+  };
+
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/");
   };
 
   return (
@@ -56,12 +68,21 @@ export default function BurgerMenu({ isOpen, onClose }) {
           </ul>
 
           <div className={s.btnContainer}>
-            <NavLink to="/login" className={s.btnEnter} onClick={onClose}>
-              Увійти
-              <svg className={s.entranceIcon}>
-                <use href={`${sprite}#icon-entrance`} />
-              </svg>
-            </NavLink>
+            {!token && (
+              <NavLink to="/login" className={s.btnEnter} onClick={onClose}>
+                Увійти
+                <svg className={s.entranceIcon}>
+                  <use href={`${sprite}#icon-entrance`} />
+                </svg>
+              </NavLink>
+            )}
+            {token && (
+              <Logout
+                onClick={handleLogout}
+                userName={user?.name || user?.email}
+              />
+            )}
+
             <NavLink to="/donate" className={s.btnDonation} onClick={onClose}>
               Підтримати
               <svg className={s.coinIcon}>

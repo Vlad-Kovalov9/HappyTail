@@ -7,11 +7,12 @@ import BurgerButton from "../BurgerButton/BurgerButton";
 import Navigation from "../Navigation/Navigation";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../redux/store/userSlice";
+import Logout from "../Logout/Logout";
 
 export default function AppBar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
-  const { token } = useSelector((state) => state.user);
+  const { token, user } = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -51,6 +52,12 @@ export default function AppBar() {
               </svg>
             </NavLink>
           )}
+          {token && (
+            <Logout
+              onClick={handleLogout}
+              userName={user?.name || user?.email}
+            />
+          )}
 
           <NavLink to="/donate" className={s.btnDonation}>
             Підтримати
@@ -58,12 +65,6 @@ export default function AppBar() {
               <use href={`${sprite}#icon-coin`} />
             </svg>
           </NavLink>
-
-          {token && (
-            <button onClick={handleLogout} className={s.btnLogout}>
-              Вийти
-            </button>
-          )}
         </div>
 
         <BurgerButton isOpen={isModalOpen} onClick={toggleModal} />

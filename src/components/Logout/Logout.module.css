@@ -1,0 +1,80 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 16px;
+  height: 16px;
+}
+
+.btnLogout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 171%;
+  letter-spacing: 0.01em;
+  padding: 10px;
+  border-radius: 14px;
+  border: 1px solid #fb8c00;
+  background: linear-gradient(270deg, #d93737 0 0) no-repeat;
+  background-size: 0% 100%;
+  background-position: right;
+  transition: background-size 0.35s ease, color 0.35s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btnLogout:hover svg {
+  color: #f9f9f5;
+}
+
+.btnLogout:focus,
+.btnLogout:hover {
+  background-size: 100% 100%;
+  color: #f9f9f5;
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border: none;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: #f9f9f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .btnLogout {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    gap: 20px;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 100%;
+  }
+}
