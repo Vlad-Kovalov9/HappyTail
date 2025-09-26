@@ -154,7 +154,7 @@
   .infoContainer {
     display: flex;
     flex-wrap: wrap;
-    gap: 14px;
+    gap: 9px;
   }
 
   .icon {
