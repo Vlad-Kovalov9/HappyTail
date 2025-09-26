@@ -1,16 +1,25 @@
 import s from "./AppBar.module.css";
 import sprite from "../../assets/icons/sprite.svg";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import BurgerButton from "../BurgerButton/BurgerButton";
 import Navigation from "../Navigation/Navigation";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../../redux/store/userSlice";
 
 export default function AppBar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const { token } = useSelector((state) => state.user);
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate("/");
+  };
 
   const toggleModal = () => {
     if (isModalOpen) {
@@ -49,6 +58,12 @@ export default function AppBar() {
               <use href={`${sprite}#icon-coin`} />
             </svg>
           </NavLink>
+
+          {token && (
+            <button onClick={handleLogout} className={s.btnLogout}>
+              Вийти
+            </button>
+          )}
         </div>
 
         <BurgerButton isOpen={isModalOpen} onClick={toggleModal} />

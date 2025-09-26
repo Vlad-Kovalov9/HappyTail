@@ -14,11 +14,14 @@ export default function Login() {
 
   const handleSubmit = async (values, { resetForm }) => {
     try {
-      const res = await fetch("http://localhost:5000/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-      });
+      const res = await fetch(
+        "https://happy-tail-backend.vercel.app/api/login",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(values),
+        }
+      );
 
       const data = await res.json();
 
@@ -36,7 +39,7 @@ export default function Login() {
       );
 
       resetForm();
-      navigate("/");
+      navigate(-1);
     } catch (error) {
       alert("Сервер недоступний");
       console.log(error);

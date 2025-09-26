@@ -15,11 +15,14 @@ export default function Register() {
 
   const handleSubmit = async (values, { resetForm }) => {
     try {
-      const res = await fetch("http://localhost:5000/api/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-      });
+      const res = await fetch(
+        "https://happy-tail-backend.vercel.app/api/register",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(values),
+        }
+      );
 
       const data = await res.json();
 
@@ -37,7 +40,7 @@ export default function Register() {
       );
 
       resetForm();
-      navigate("/");
+      navigate(-2);
     } catch (error) {
       alert("Сервер недоступний");
       console.log(error);

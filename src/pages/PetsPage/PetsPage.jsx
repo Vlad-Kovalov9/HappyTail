@@ -23,7 +23,9 @@ export default function PetsPage() {
   useEffect(() => {
     const fetchPets = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/pets");
+        const res = await fetch(
+          "https://happy-tail-backend.vercel.app/api/pets"
+        );
         const data = await res.json();
         setPetsData(data);
         setFilteredPets(data);
