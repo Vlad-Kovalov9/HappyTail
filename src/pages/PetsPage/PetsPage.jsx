@@ -1,24 +1,28 @@
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import s from "./PetsPage.module.css";
 import sprite from "../../assets/icons/sprite.svg";
 import PetsList from "../../components/PetsList/PetsList.jsx";
 import Filters from "../../components/Filters/Filters.jsx";
 import FiltersModal from "../../components/FiltersModal/FiltersModal.jsx";
+import {
+  setFilters,
+  setFilteredPets,
+  resetFilters,
+  showMore,
+} from "../../redux/store/filtersSlice";
 
 export default function PetsPage() {
+  const dispatch = useDispatch();
+  const {
+    values: filtersValues,
+    filteredPets,
+    visibleCount,
+  } = useSelector((state) => state.filters);
+
   const [petsData, setPetsData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [visibleCount, setVisibleCount] = useState(12);
-  const [filteredPets, setFilteredPets] = useState([]);
-
-  const [filtersValues, setFiltersValues] = useState({
-    city: [],
-    pet: [],
-    gender: "",
-    age: [],
-    sterilization: "",
-  });
 
   useEffect(() => {
     const fetchPets = async () => {
@@ -28,7 +32,7 @@ export default function PetsPage() {
         );
         const data = await res.json();
         setPetsData(data);
-        setFilteredPets(data);
+        dispatch(setFilteredPets(data));
       } catch (err) {
         console.error("Error fetching pets:", err);
       } finally {
@@ -37,14 +41,10 @@ export default function PetsPage() {
     };
 
     fetchPets();
-  }, []);
+  }, [dispatch]);
 
   const toggleModal = () => {
     setIsModalOpen((prev) => !prev);
-  };
-
-  const showMore = () => {
-    setVisibleCount((prev) => Math.min(prev + 12, petsData.length));
   };
 
   const parseAge = (ageStr) => {
@@ -91,21 +91,13 @@ export default function PetsPage() {
       );
     }
 
-    setFilteredPets(result);
-    setFiltersValues(filters);
-    setVisibleCount(12);
+    dispatch(setFilters(filters));
+    dispatch(setFilteredPets(result));
   };
 
   const handleResetFilters = () => {
-    setFilteredPets(petsData);
-    setVisibleCount(12);
-    setFiltersValues({
-      city: [],
-      pet: [],
-      gender: "",
-      age: [],
-      sterilization: "",
-    });
+    dispatch(resetFilters());
+    dispatch(setFilteredPets(petsData));
   };
 
   if (loading) return <p>Завантаження...</p>;
@@ -139,7 +131,7 @@ export default function PetsPage() {
           <PetsList data={filteredPets.slice(0, visibleCount)} />
 
           {visibleCount < filteredPets.length && (
-            <button className={s.showMore} onClick={showMore}>
+            <button className={s.showMore} onClick={() => dispatch(showMore())}>
               Дивитися більше
             </button>
           )}
