@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 355px;
+  height: 355px;
+}
+
+@media screen and (min-width: 768px) {
+  .image {
+    width: 623px;
+    height: 623px;
+    transform: translateY(-70px);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .image {
+    width: 906px;
+    height: 906px;
+    transform: translateY(-100px);
+  }
+}

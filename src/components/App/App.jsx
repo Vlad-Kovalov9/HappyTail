@@ -19,6 +19,7 @@ const LoginPage = lazy(() => import("../../pages/LoginPage/LoginPage.jsx"));
 const RegisterPage = lazy(() =>
   import("../../components/Register/Register.jsx")
 );
+const DonatePage = lazy(() => import("../../pages/DonatePage/DonatePage.jsx"));
 
 export default function App() {
   useAutoRefreshToken();
@@ -34,6 +35,7 @@ export default function App() {
         <Route path="blog" element={<BlogPage />} />
         <Route path="login" element={<LoginPage />} />
         <Route path="register" element={<RegisterPage />} />
+        <Route path="donate" element={<DonatePage />} />
       </Route>
     </Routes>
   );
