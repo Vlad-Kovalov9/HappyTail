@@ -1,7 +1,11 @@
 import s from "./Logout.module.css";
 import sprite from "../../assets/icons/sprite.svg";
+import LogoutModal from "../LogoutModal/LogoutModal";
+import { useState } from "react";
 
 export default function Logout({ onClick, userName }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const firstLetter = userName ? userName.charAt(0).toUpperCase() : "?";
 
   const colors = [
@@ -30,12 +34,22 @@ export default function Logout({ onClick, userName }) {
       <div className={s.avatar} style={{ backgroundColor: bgColor }}>
         {firstLetter}
       </div>
-      <button onClick={onClick} className={s.btnLogout}>
+      <button onClick={() => setIsModalOpen(true)} className={s.btnLogout}>
         Вийти
         <svg className={s.logo}>
           <use href={`${sprite}#icon-logout`} />
         </svg>
       </button>
+
+      {isModalOpen && (
+        <LogoutModal
+          onConfirm={() => {
+            onClick();
+            setIsModalOpen(false);
+          }}
+          onCancel={() => setIsModalOpen(false)}
+        />
+      )}
     </div>
   );
 }
