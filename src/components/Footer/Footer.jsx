@@ -10,11 +10,16 @@ export default function Footer() {
         <div className={s.navigation}>
           <FooterNavigation />
           <FooterInfo />
+          <FooterMedia />
         </div>
 
-        <FooterMedia />
-
-        <span className={s.rules}>© 2025 Happy Хвіст. Всі права захищені.</span>
+        <div className={s.rulesContainer}>
+          <span className={s.rules}>
+            © 2025 Happy Хвіст. Всі права захищені.
+          </span>
+          <span className={s.develop}>Дизайн — Олександра Утюжова</span>
+          <span className={s.develop}>Розробка — Владислав Ковальов</span>
+        </div>
       </div>
     </footer>
   );
