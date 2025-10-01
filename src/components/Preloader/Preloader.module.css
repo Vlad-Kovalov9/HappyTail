@@ -29,6 +29,10 @@
   background-size: 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  color: transparent;
+
   animation: flyIn 0.5s forwards, gradientMove 3s linear infinite;
   animation-delay: var(--delay);
 }
