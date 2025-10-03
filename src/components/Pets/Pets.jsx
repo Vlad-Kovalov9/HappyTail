@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import s from "./Pets.module.css";
 import PetsList from "../PetsList/PetsList";
+import Loader from "../Loader/Loader";
 
 export default function Pets() {
   const [petsData, setPetsData] = useState([]);
@@ -41,7 +42,7 @@ export default function Pets() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  if (loading) return <p>Завантаження...</p>;
+  if (loading) return <Loader />;
 
   return (
     <div className={s.container}>

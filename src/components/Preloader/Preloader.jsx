@@ -1,7 +1,7 @@
 import s from "./Preloader.module.css";
 
 export default function Preloader() {
-  const lines = ["THIS IS MY", "FIRST PET-PROJECT"];
+  const lines = ["THIS IS MY", "PET-PROJECT"];
 
   return (
     <div className={s.preloader}>

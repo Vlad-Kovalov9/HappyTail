@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import PetDetailsMessage from "../../components/PetDetailsMessage/PetDetailsMessage";
 import AuthRequiredModal from "../../components/AuthRequiredModal/AuthRequiredModal";
+import Loader from "../../components/Loader/Loader";
 
 export default function PetDetailsPage() {
   const { id } = useParams();
@@ -26,7 +27,7 @@ export default function PetDetailsPage() {
     fetchPet();
   }, [id]);
 
-  if (!pet) return <p>Завантаження...</p>;
+  if (!pet) return <Loader />;
 
   const handleAdoptClick = () => {
     if (token) {

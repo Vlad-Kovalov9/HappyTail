@@ -11,6 +11,7 @@ import {
   resetFilters,
   showMore,
 } from "../../redux/store/filtersSlice";
+import Loader from "../../components/Loader/Loader.jsx";
 
 export default function PetsPage() {
   const dispatch = useDispatch();
@@ -100,7 +101,7 @@ export default function PetsPage() {
     dispatch(setFilteredPets(petsData));
   };
 
-  if (loading) return <p>Завантаження...</p>;
+  if (loading) return <Loader />;
 
   return (
     <div className={s.container}>
