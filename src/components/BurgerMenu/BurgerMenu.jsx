@@ -61,7 +61,7 @@ export default function BurgerMenu({ isOpen, onClose }) {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/" className={s.link} onClick={onClose}>
+              <NavLink to="/reviews" className={s.link} onClick={onClose}>
                 Відгуки
               </NavLink>
             </li>

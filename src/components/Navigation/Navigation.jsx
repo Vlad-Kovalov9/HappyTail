@@ -20,7 +20,7 @@ export default function Navigation() {
         Блог
       </NavLink>
 
-      <NavLink to="/" className={s.link}>
+      <NavLink to="/reviews" className={s.link}>
         Відгуки
       </NavLink>
     </nav>
