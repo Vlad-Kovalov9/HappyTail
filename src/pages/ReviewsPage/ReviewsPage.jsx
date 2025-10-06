@@ -1,5 +1,27 @@
+import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 import s from "./ReviewsPage.module.css";
+import ReviewsAdd from "../../components/ReviewsAdd/ReviewsAdd";
 
 export default function ReviewsPage() {
-  return <div className={s.container}>Hello</div>;
+  const user = useSelector((state) => state.user.user);
+
+  return (
+    <div className={s.container}>
+      {!user ? (
+        <p className={s.title}>
+          <NavLink to="/login" className={s.navigation}>
+            Увійдіть
+          </NavLink>{" "}
+          або{" "}
+          <NavLink to="/register" className={s.navigation}>
+            Зареєструйтеся
+          </NavLink>
+          , щоб додати відгук
+        </p>
+      ) : (
+        <ReviewsAdd />
+      )}
+    </div>
+  );
 }

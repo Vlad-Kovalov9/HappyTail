@@ -1,0 +1,75 @@
+.container {
+  border: 1px solid #00ad6f;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 46px;
+  color: #f9f9f5;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0.01em;
+  color: #000000;
+}
+
+.textareaWrapper {
+  margin-top: 16px;
+  position: relative;
+  width: 100%;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 40px;
+  max-height: 200px;
+  padding: 12px 48px 12px 12px;
+  border-radius: 14px;
+  border: 1px solid #c3c3c3;
+  font-size: 16px;
+  line-height: 1.5;
+  resize: none;
+  overflow-y: auto;
+}
+
+.sendButton {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sendButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.icon {
+  width: 20px;
+  height: 21px;
+  fill: #00ad6f;
+}
