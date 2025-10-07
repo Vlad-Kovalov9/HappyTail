@@ -8,8 +8,6 @@ export default function Reviews() {
       <h2 className={s.titleMobile}>Щасливі історії</h2>
       <h2 className={s.title}>Щасливі історії наших хвостатиків</h2>
 
-      <ReviewsList />
-
       <NavLink to="/reviews" className={s.link}>
         Переглянути всі відгуки
       </NavLink>

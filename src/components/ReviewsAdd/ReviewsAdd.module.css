@@ -73,3 +73,19 @@
   height: 21px;
   fill: #00ad6f;
 }
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 16px;
+  align-items: start;
+}
+
+.ratingText {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.01em;
+  color: #595555;
+}

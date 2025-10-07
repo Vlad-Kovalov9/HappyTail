@@ -4,11 +4,12 @@ import s from "./ReviewsAdd.module.css";
 import sprite from "../../assets/icons/sprite.svg";
 import axios from "axios";
 import { getAvatarData } from "../../utils/getAvatarData";
+import ReviewsRating from "../ReviewsRating/ReviewsRating";
 
 export default function ReviewsAdd() {
   const user = useSelector((state) => state.user.user);
   const [text, setText] = useState("");
-  const [rating, setRating] = useState(5);
+  const [rating, setRating] = useState(0);
   const [loading, setLoading] = useState(false);
 
   const { firstLetter, bgColor } = getAvatarData(user?.name);
@@ -33,6 +34,7 @@ export default function ReviewsAdd() {
 
       console.log("Відгук додано:", res.data);
       setText("");
+      setRating(0);
     } catch (err) {
       console.error("Помилка при додаванні відгуку:", err);
     } finally {
@@ -47,6 +49,11 @@ export default function ReviewsAdd() {
           {firstLetter}
         </div>
         <p className={s.name}>{user?.name || "Гість"}</p>
+      </div>
+
+      <div className={s.rating}>
+        <p className={s.ratingText}>Оцініть роботу притулку</p>
+        <ReviewsRating rating={rating} onChange={setRating} />
       </div>
 
       <form onSubmit={handleSubmit} className={s.form}>
