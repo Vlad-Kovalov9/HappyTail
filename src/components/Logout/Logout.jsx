@@ -3,11 +3,20 @@ import sprite from "../../assets/icons/sprite.svg";
 import LogoutModal from "../LogoutModal/LogoutModal";
 import { useState } from "react";
 import { getAvatarData } from "../../utils/getAvatarData";
+import { useNavigate } from "react-router-dom";
 
 export default function Logout({ onClick, userName }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   const { firstLetter, bgColor } = getAvatarData(userName);
+
+  const handleLogout = () => {
+    onClick();
+    setIsModalOpen(false);
+    if (window.history.length > 2) navigate(-1);
+    else navigate("/");
+  };
 
   return (
     <div className={s.container}>
@@ -23,10 +32,7 @@ export default function Logout({ onClick, userName }) {
 
       {isModalOpen && (
         <LogoutModal
-          onConfirm={() => {
-            onClick();
-            setIsModalOpen(false);
-          }}
+          onConfirm={handleLogout}
           onCancel={() => setIsModalOpen(false)}
         />
       )}
