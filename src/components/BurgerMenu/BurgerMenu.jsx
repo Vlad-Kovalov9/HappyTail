@@ -1,6 +1,6 @@
 import s from "./BurgerMenu.module.css";
 import sprite from "../../assets/icons/sprite.svg";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Logout from "../Logout/Logout";
@@ -10,6 +10,8 @@ export default function BurgerMenu({ isOpen, onClose }) {
   const { token, user } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const location = useLocation();
 
   useEffect(() => {
     if (isOpen) {
@@ -69,7 +71,12 @@ export default function BurgerMenu({ isOpen, onClose }) {
 
           <div className={s.btnContainer}>
             {!token && (
-              <NavLink to="/login" className={s.btnEnter} onClick={onClose}>
+              <NavLink
+                to="/login"
+                className={s.btnEnter}
+                onClick={onClose}
+                state={{ from: location.pathname }}
+              >
                 Увійти
                 <svg className={s.entranceIcon}>
                   <use href={`${sprite}#icon-entrance`} />

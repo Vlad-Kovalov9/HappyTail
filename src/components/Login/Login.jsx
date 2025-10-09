@@ -1,18 +1,25 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import s from "./Login.module.css";
 import { loginValidationSchema } from "../../../validation/validationSchema.js";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import sprite from "../../assets/icons/sprite.svg";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../redux/store/userSlice.js";
+import Loader from "../Loader/Loader.jsx";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const location = useLocation();
+  const from = location.state?.from || "/";
+
   const handleSubmit = async (values, { resetForm }) => {
+    setLoading(true);
     try {
       const res = await fetch(
         "https://happy-tail-backend.vercel.app/api/login",
@@ -39,12 +46,18 @@ export default function Login() {
       );
 
       resetForm();
-      navigate(-1);
+      navigate(from, { replace: true });
     } catch (error) {
       alert("Сервер недоступний");
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className={s.container}>
@@ -52,7 +65,7 @@ export default function Login() {
         <h2 className={s.title}>Увійти</h2>
         <p className={s.text}>
           Ще не маєте облікового запису?
-          <NavLink to="/register" className={s.linkRegister}>
+          <NavLink to="/register" className={s.linkRegister} state={{ from }}>
             Зареєструватися
           </NavLink>
         </p>

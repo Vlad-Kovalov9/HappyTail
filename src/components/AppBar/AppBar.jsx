@@ -1,6 +1,6 @@
 import s from "./AppBar.module.css";
 import sprite from "../../assets/icons/sprite.svg";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import BurgerButton from "../BurgerButton/BurgerButton";
@@ -16,6 +16,8 @@ export default function AppBar() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const location = useLocation();
 
   const handleLogout = () => {
     dispatch(logout());
@@ -45,7 +47,11 @@ export default function AppBar() {
 
         <div className={s.btnContainer}>
           {!token && (
-            <NavLink to="/login" className={s.btnEnter}>
+            <NavLink
+              to="/login"
+              className={s.btnEnter}
+              state={{ from: location.pathname }}
+            >
               Увійти
               <svg className={s.entranceIcon}>
                 <use href={`${sprite}#icon-entrance`} />
