@@ -1,0 +1,91 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.containerInfo {
+  display: flex;
+  flex-direction: column;
+  padding-top: 12px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 46px;
+  color: #f9f9f5;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0.01em;
+  color: #000;
+}
+
+.date {
+  font-weight: 275;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0.01em;
+  color: #6f6d6d;
+  margin-left: 15px;
+}
+
+.text {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0.01em;
+  color: #000;
+  max-width: 293px;
+  margin-top: 4px;
+}
+
+.rating {
+  margin-top: 10px;
+}
+
+.star {
+  width: 28px;
+  height: 28px;
+  fill: #ccc;
+  cursor: pointer;
+}
+
+.star.active {
+  fill: #f3da1b;
+}
+
+@media screen and (min-width: 768px) {
+  .text {
+    max-width: 667px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .text {
+    max-width: 1215px;
+  }
+}

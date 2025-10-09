@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import s from "./ReviewsPage.module.css";
 import ReviewsAdd from "../../components/ReviewsAdd/ReviewsAdd";
+import ReviewsList from "../../components/ReviewsList/ReviewsList";
 
 export default function ReviewsPage() {
   const user = useSelector((state) => state.user.user);
@@ -22,6 +23,7 @@ export default function ReviewsPage() {
       ) : (
         <ReviewsAdd />
       )}
+      <ReviewsList />
     </div>
   );
 }
