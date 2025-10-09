@@ -1,32 +1,9 @@
-import { useEffect, useState } from "react";
 import s from "./ReviewsList.module.css";
-import axios from "axios";
 import { getAvatarData } from "../../utils/getAvatarData";
 import sprite from "../../assets/icons/sprite.svg";
-import Loader from "../Loader/Loader";
 
-export default function ReviewsList() {
-  const [reviews, setReviews] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchReviews = async () => {
-      try {
-        const res = await axios.get(
-          "https://happy-tail-backend.vercel.app/api/reviews"
-        );
-        setReviews(res.data);
-      } catch (err) {
-        console.error("Помилка при завантаженні відгуків:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchReviews();
-  }, []);
-
-  if (loading) return <Loader />;
+export default function ReviewsList({ reviews }) {
+  if (!reviews || reviews.length === 0) return <p>Відгуків ще немає</p>;
 
   return (
     <ul className={s.list}>
@@ -38,6 +15,7 @@ export default function ReviewsList() {
           day: "numeric",
         });
         const { firstLetter, bgColor } = getAvatarData(name);
+
         return (
           <li key={review._id} className={s.item}>
             <div className={s.avatar} style={{ backgroundColor: bgColor }}>

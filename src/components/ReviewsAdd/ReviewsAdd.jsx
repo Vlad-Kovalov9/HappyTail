@@ -6,8 +6,10 @@ import axios from "axios";
 import { getAvatarData } from "../../utils/getAvatarData";
 import ReviewsRating from "../ReviewsRating/ReviewsRating";
 
-export default function ReviewsAdd() {
+export default function ReviewsAdd({ addReview }) {
   const user = useSelector((state) => state.user.user);
+  const token = useSelector((state) => state.user.token);
+
   const [text, setText] = useState("");
   const [rating, setRating] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -20,7 +22,6 @@ export default function ReviewsAdd() {
 
     try {
       setLoading(true);
-      const token = localStorage.getItem("token");
 
       const res = await axios.post(
         "https://happy-tail-backend.vercel.app/api/reviews",
@@ -32,11 +33,17 @@ export default function ReviewsAdd() {
         }
       );
 
-      console.log("Відгук додано:", res.data);
+      addReview(res.data);
       setText("");
       setRating(0);
     } catch (err) {
-      console.error("Помилка при додаванні відгуку:", err);
+      console.error(
+        "Помилка при додаванні відгуку:",
+        err.response?.data || err
+      );
+      if (err.response?.status === 401) {
+        alert("Сесія закінчилась. Увійдіть знову.");
+      }
     } finally {
       setLoading(false);
     }

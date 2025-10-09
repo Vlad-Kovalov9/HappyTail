@@ -16,7 +16,7 @@ const PetsPage = lazy(() => import("../../pages/PetsPage/PetsPage.jsx"));
 const PetDetailsPage = lazy(() =>
   import("../../pages/PetDetailsPage/PetDetailsPage.jsx")
 );
-const LoginPage = lazy(() => import("../../pages/LoginPage/LoginPage.jsx"));
+const AuthPage = lazy(() => import("../../pages/AuthPage/AuthPage.jsx"));
 const RegisterPage = lazy(() =>
   import("../../components/Register/Register.jsx")
 );
@@ -50,7 +50,7 @@ export default function App() {
           <Route path="pets/:id" element={<PetDetailsPage />} />
           <Route path="contacts" element={<ContactsPage />} />
           <Route path="blog" element={<BlogPage />} />
-          <Route path="login" element={<LoginPage />} />
+          <Route path="login" element={<AuthPage />} />
           <Route path="register" element={<RegisterPage />} />
           <Route path="donate" element={<DonatePage />} />
           <Route path="reviews" element={<ReviewsPage />} />

@@ -4,36 +4,49 @@ import { setUser, logout } from "../redux/store/userSlice";
 
 export const useAutoRefreshToken = () => {
   const dispatch = useDispatch();
-  const { token, user } = useSelector((state) => state.user);
+  const { user, refreshToken } = useSelector((state) => state.user);
 
   useEffect(() => {
-    if (!user || !token) return;
+    if (!refreshToken) return;
 
-    const interval = setInterval(async () => {
+    const refreshAccessToken = async () => {
       try {
-        const refreshToken = localStorage.getItem("refreshToken");
-        if (!refreshToken) {
-          dispatch(logout());
-          return;
+        const res = await fetch(
+          "https://happy-tail-backend.vercel.app/api/refresh",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ refreshToken }),
+          }
+        );
+
+        if (!res.ok) {
+          if (res.status === 401 || res.status === 403) {
+            dispatch(logout());
+            return;
+          }
+          throw new Error("Refresh failed");
         }
 
-        const res = await fetch("http://localhost:5000/api/refresh", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ refreshToken }),
-        });
-
-        if (!res.ok) throw new Error("Refresh failed");
-
         const data = await res.json();
-        dispatch(setUser({ user, token: data.accessToken }));
-        localStorage.setItem("token", data.accessToken);
-      } catch (error) {
+
+        dispatch(
+          setUser({
+            user: user || data.user || null,
+            token: data.accessToken,
+            refreshToken: data.refreshToken || refreshToken,
+          })
+        );
+      } catch (err) {
+        console.error("Refresh token error:", err);
         dispatch(logout());
-        console.log(error);
       }
-    }, 13 * 60 * 1000);
+    };
+
+    refreshAccessToken();
+
+    const interval = setInterval(refreshAccessToken, 14 * 60 * 1000);
 
     return () => clearInterval(interval);
-  }, [dispatch, token, user]);
+  }, [dispatch, refreshToken, user]);
 };
