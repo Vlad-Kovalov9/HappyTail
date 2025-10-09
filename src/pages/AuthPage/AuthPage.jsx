@@ -1,10 +1,10 @@
 import Login from "../../components/Login/Login";
-import s from "./LoginPage.module.css";
+import s from "./AuthPage.module.css";
 
 export default function AuthPage() {
   return (
-    <div className={s.container}>
-      <Login />
+    <div>
+      <Login className={s.container} />
     </div>
   );
 }
