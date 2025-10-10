@@ -50,7 +50,7 @@ export default function ReviewsPage() {
       ) : (
         <ReviewsAdd addReview={addReview} />
       )}
-      <ReviewsList reviews={reviews} />
+      <ReviewsList reviews={reviews} setReviews={setReviews} />
     </div>
   );
 }

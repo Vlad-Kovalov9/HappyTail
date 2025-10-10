@@ -36,10 +36,13 @@ export default function Login() {
         alert(data.message || "Помилка входу");
         return;
       }
-
       dispatch(
         setUser({
-          user: data.user,
+          user: {
+            _id: data.user._id || data.user.id,
+            name: data.user.name,
+            email: data.user.email,
+          },
           token: data.accessToken,
           refreshToken: data.refreshToken,
         })
