@@ -6,6 +6,7 @@ import ReviewsList from "../../components/ReviewsList/ReviewsList";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Loader from "../../components/Loader/Loader";
+import ReviewsTotal from "../../components/ReviewsTotal/ReviewsTotal";
 
 export default function ReviewsPage() {
   const user = useSelector((state) => state.user.user);
@@ -50,6 +51,7 @@ export default function ReviewsPage() {
       ) : (
         <ReviewsAdd addReview={addReview} />
       )}
+      <ReviewsTotal reviews={reviews} />
       <ReviewsList reviews={reviews} setReviews={setReviews} />
     </div>
   );

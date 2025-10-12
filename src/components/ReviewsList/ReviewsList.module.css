@@ -87,6 +87,10 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .list {
+    margin-top: 58px;
+  }
+
   .text {
     max-width: 1215px;
   }

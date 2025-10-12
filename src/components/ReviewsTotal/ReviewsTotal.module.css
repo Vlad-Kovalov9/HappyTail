@@ -1,0 +1,72 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 40px;
+}
+
+.text {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0.01em;
+  color: #000;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  line-height: 0;
+}
+
+.starWrapper {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.star,
+.starFill svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  display: block;
+  fill: #ccc;
+  pointer-events: none;
+}
+
+.starFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.starFill.full {
+  width: 100%;
+}
+
+.starFill.half {
+  width: 50%;
+}
+
+.starFill svg {
+  fill: #f3da1b;
+}
+
+@media screen and (min-width: 768px) {
+  .text {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    margin-top: 58px;
+  }
+}
