@@ -19,6 +19,40 @@
   color: #fb8c00;
 }
 
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 60px;
+  justify-content: center;
+}
+
+.pageBtn {
+  background: transparent;
+  border: none;
+  font-weight: 500;
+  font-size: 16px;
+  color: #595555;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.pageBtn:hover {
+  background: #00ad6f;
+  color: #fff;
+}
+
+.pageBtn.active {
+  background: #00ad6f;
+  color: #fff;
+}
+
 @media screen and (min-width: 768px) {
   .title {
     text-align: left;
@@ -28,10 +62,20 @@
     padding: 4px 12px;
     border-radius: 14px;
   }
+
+  .pageBtn {
+    font-size: 18px;
+    width: 36px;
+    height: 36px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .title {
     padding: 16px 12px;
+  }
+
+  .pageBtn {
+    font-size: 20px;
   }
 }

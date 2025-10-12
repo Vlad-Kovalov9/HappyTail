@@ -6,8 +6,7 @@ export default function ReviewsTotal({ reviews }) {
 
   const totalReviews = reviews.length;
   const averageRating =
-    reviews.reduce((sum, review) => sum + (review.rating || 0), 0) /
-    totalReviews;
+    reviews.reduce((sum, r) => sum + (r.rating || 0), 0) / totalReviews;
 
   return (
     <div className={s.container}>
