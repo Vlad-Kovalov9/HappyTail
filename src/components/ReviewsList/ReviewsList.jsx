@@ -4,11 +4,15 @@ import sprite from "../../assets/icons/sprite.svg";
 import DeleteReview from "../DeleteReview/DeleteReview";
 import { useSelector } from "react-redux";
 
-export default function ReviewsList({ reviews, setReviews }) {
+export default function ReviewsList({ reviews, setReviews, onDelete }) {
   const user = useSelector((state) => state.user.user);
 
-  const handleDelete = (deletedId) => {
+  const handleDelete = async (deletedId) => {
     setReviews((prev) => prev.filter((r) => r._id !== deletedId));
+
+    if (onDelete) {
+      await onDelete(deletedId);
+    }
   };
 
   if (!reviews || reviews.length === 0) return <p>Відгуків ще немає</p>;
@@ -24,8 +28,6 @@ export default function ReviewsList({ reviews, setReviews }) {
         });
         const { firstLetter, bgColor } = getAvatarData(name);
 
-        // console.log("review.user:", review.user);
-        // console.log("user._id:", user?._id);
         return (
           <li key={review._id} className={s.item}>
             <div className={s.avatar} style={{ backgroundColor: bgColor }}>

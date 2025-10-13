@@ -14,13 +14,14 @@ export default function DeleteReview({ reviewId, onDelete }) {
       await axios.delete(
         `https://happy-tail-backend.vercel.app/api/reviews/${reviewId}`,
         {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+          headers: { Authorization: `Bearer ${token}` },
         }
       );
 
-      if (onDelete) onDelete(reviewId);
+      if (onDelete) {
+        await onDelete(reviewId);
+      }
+
       setShowModal(false);
     } catch (error) {
       console.error("Помилка при видаленні відгуку:", error);

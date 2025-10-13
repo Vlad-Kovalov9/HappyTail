@@ -56,9 +56,12 @@ export default function ReviewsPage() {
     setCurrentPage(1);
   };
 
-  const handleDelete = (deletedId) => {
+  const handleDelete = async (deletedId) => {
     setReviews((prev) => prev.filter((r) => r._id !== deletedId));
     setAllReviews((prev) => prev.filter((r) => r._id !== deletedId));
+
+    await fetchReviews(currentPage);
+    await fetchAllReviews();
   };
 
   if (loading) return <Loader />;
