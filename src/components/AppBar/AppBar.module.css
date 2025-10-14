@@ -7,6 +7,26 @@
   align-items: center;
 }
 
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 5000;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform, background, box-shadow;
+}
+
+.hidden {
+  transform: translateY(-100%);
+}
+
+.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(6px);
+}
+
 .logo {
   width: 125px;
   height: 46px;
