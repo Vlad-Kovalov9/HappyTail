@@ -1,0 +1,24 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+}
+
+.modal {
+  background-color: #f9f9f5;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 24px 12px;
+  width: 90%;
+  max-width: 358px;
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    max-width: 440px;
+  }
+}
