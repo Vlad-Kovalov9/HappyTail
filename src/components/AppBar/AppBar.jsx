@@ -101,6 +101,7 @@ export default function AppBar() {
           <BurgerButton isOpen={isModalOpen} onClick={toggleModal} />
         </div>
       </header>
+
       {showMenu && <BurgerMenu isOpen={isModalOpen} onClose={toggleModal} />}
     </>
   );
