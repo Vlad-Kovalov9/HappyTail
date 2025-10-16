@@ -1,8 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Layout from "../Layout/Layout";
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense } from "react";
 import { useAutoRefreshToken } from "../../hooks/useAutoRefreshToken.js";
-import Preloader from "../Preloader/Preloader.jsx";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage.jsx"));
 const AboutUsPage = lazy(() =>
@@ -21,7 +20,6 @@ const RegisterPage = lazy(() =>
   import("../../components/Register/Register.jsx")
 );
 const DonatePage = lazy(() => import("../../pages/DonatePage/DonatePage.jsx"));
-
 const ReviewsPage = lazy(() =>
   import("../../pages/ReviewsPage/ReviewsPage.jsx")
 );
@@ -29,19 +27,8 @@ const ReviewsPage = lazy(() =>
 export default function App() {
   useAutoRefreshToken();
 
-  const [introLoading, setIntroLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIntroLoading(false), 3000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (introLoading) {
-    return <Preloader />;
-  }
-
   return (
-    <Suspense fallback={<Preloader />}>
+    <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
