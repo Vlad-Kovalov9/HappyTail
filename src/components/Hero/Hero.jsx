@@ -1,11 +1,14 @@
 import s from "./Hero.module.css";
-import imageMobile from "/image/heroMobile.png";
 import { NavLink } from "react-router-dom";
 
 export default function Hero() {
   return (
     <section className={s.hero}>
-      <img src={imageMobile} alt="Hero Dog Image" className={s.imageMobile} />
+      <img
+        src="https://res.cloudinary.com/dcnsdntgs/image/upload/f_auto,q_auto,w_390/v1760617192/heroMobile_zlstvf.png"
+        alt="Hero Dog Image"
+        className={s.imageMobile}
+      />
 
       <div className={s.container}>
         <div className={s.info}>

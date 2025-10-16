@@ -75,7 +75,7 @@
 @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
-    background-image: url("/image/hero.png");
+    background-image: url("https://res.cloudinary.com/dcnsdntgs/image/upload/f_auto,q_auto,w_606/v1760617193/hero_hji0fw.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center calc(50% - 30px);
@@ -121,6 +121,7 @@
 
 @media screen and (min-width: 1440px) {
   .container {
+    background-image: url("https://res.cloudinary.com/dcnsdntgs/image/upload/f_auto,q_auto,w_1440/v1760617193/hero_hji0fw.png");
     max-width: 1440px;
     min-height: 620px;
     background-position: center calc(50% - 50px);
