@@ -9,8 +9,6 @@ export default function Hero() {
         alt="Hero Dog Image"
         width={390}
         height={264}
-        loading="eager"
-        fetchpriority="high"
         className={s.imageMobile}
       />
 
