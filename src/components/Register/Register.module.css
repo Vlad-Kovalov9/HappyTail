@@ -135,7 +135,7 @@
 
 @media screen and (min-width: 768px) {
   .container {
-    background-image: url("/image/registerDog.jpg");
+    background-image: url("https://res.cloudinary.com/dcnsdntgs/image/upload/f_auto,q_auto,w_728,h_618,c_fill/registerDog_j5u4ct.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -152,6 +152,7 @@
 
 @media screen and (min-width: 1440px) {
   .container {
+    background-image: url("https://res.cloudinary.com/dcnsdntgs/image/upload/f_auto,q_auto,w_1280,h_663,c_fill/registerDog_j5u4ct.jpg");
     padding-top: 137px;
     padding-bottom: 137px;
   }

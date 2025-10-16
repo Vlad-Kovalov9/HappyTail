@@ -3,8 +3,8 @@ import s from "./AuthPage.module.css";
 
 export default function AuthPage() {
   return (
-    <div>
-      <Login className={s.container} />
+    <div className={s.container}>
+      <Login />
     </div>
   );
 }

@@ -1,8 +1,5 @@
 import { NavLink } from "react-router-dom";
 import s from "./About.module.css";
-import aboutCat from "/image/aboutCat.jpg";
-import aboutDog from "/image/aboutDog.jpg";
-import aboutCatTablet from "/image/aboutCatTablet.jpg";
 import AboutCounter from "../AboutCounter/AboutCounter";
 
 export default function About() {
@@ -10,10 +7,39 @@ export default function About() {
     <div className={s.container}>
       <h2 className={s.title}>Про притулок </h2>
       <div className={s.wrapper}>
-        <img src={aboutCat} alt="Cat Image" className={s.catImage} />
-        <img src={aboutCatTablet} alt="Cat Image" className={s.catTablet} />
+        <picture>
+          <source
+            media="(min-width: 1440px)"
+            srcSet="https://res.cloudinary.com/dcnsdntgs/image/upload/f_auto,q_auto,w_630,h_287,c_fill/aboutCatTablet_cx8iev.jpg"
+          />
+
+          <source
+            media="(min-width: 768px)"
+            srcSet="https://res.cloudinary.com/dcnsdntgs/image/upload/f_auto,q_auto,w_356,h_287,c_fill/aboutCatTablet_cx8iev.jpg"
+          />
+
+          <img
+            src="https://res.cloudinary.com/dcnsdntgs/image/upload/f_auto,q_auto,w_358,h_205,c_fill/aboutCatTablet_cx8iev.jpg"
+            alt="Cat Image"
+            className={s.catImage}
+          />
+        </picture>
         <div className={s.dogWrapper}>
-          <img src={aboutDog} alt="Dog Image" className={s.dogImage} />
+          <picture>
+            <source
+              media="(min-width: 1440px)"
+              srcSet="https://res.cloudinary.com/dcnsdntgs/image/upload/v1760622638/aboutDog_cakwwz.jpg"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcSet="https://res.cloudinary.com/dcnsdntgs/image/upload/v1760622638/aboutDog_cakwwz.jpg"
+            />
+            <img
+              src="https://res.cloudinary.com/dcnsdntgs/image/upload/v1760622638/aboutDog_cakwwz.jpg"
+              alt="Dog Image"
+              className={s.dogImage}
+            />
+          </picture>
           <p className={s.subtitle}>
             Кожна тварина заслуговує на шанс на щасливе життя та люблячий дім
           </p>

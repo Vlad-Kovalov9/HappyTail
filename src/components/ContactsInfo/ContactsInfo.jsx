@@ -1,11 +1,24 @@
 import s from "./ContactsInfo.module.css";
-import image from "/image/ContactsPage/OurBuilding.jpg";
 import sprite from "../../assets/icons/sprite.svg";
 
 export default function ContactsInfo() {
   return (
     <div className={s.info}>
-      <img src={image} alt="Фото нашої будівлі" className={s.image} />
+      <picture>
+        <source
+          media="(min-width: 1440px)"
+          srcSet="https://res.cloudinary.com/dcnsdntgs/image/upload/f_auto,q_auto,w_522,h_449,c_fill/OurBuilding_jbm45z.jpg"
+        />
+        <source
+          media="(min-width: 768px)"
+          srcSet="https://res.cloudinary.com/dcnsdntgs/image/upload/f_auto,q_auto,w_294,h_292,c_fill/OurBuilding_jbm45z.jpg"
+        />
+        <img
+          src="https://res.cloudinary.com/dcnsdntgs/image/upload/f_auto,q_auto,w_358,h_238,c_fill/OurBuilding_jbm45z.jpg"
+          alt="Фото нашої будівлі"
+          className={s.image}
+        />
+      </picture>
 
       <ul className={s.list}>
         <li className={s.item}>

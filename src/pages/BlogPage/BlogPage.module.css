@@ -9,6 +9,10 @@
   gap: 24px;
 }
 
+.image {
+  border-radius: 14px;
+}
+
 .link {
   display: block;
   font-weight: 600;

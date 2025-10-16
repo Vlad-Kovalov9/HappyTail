@@ -65,12 +65,12 @@
   display: none;
 }
 
-.catTablet {
+.hideText {
   display: none;
 }
 
-.hideText {
-  display: none;
+.catImage {
+  border-radius: 14px;
 }
 
 @media screen and (min-width: 768px) {
@@ -79,14 +79,6 @@
   }
 
   .dogImage {
-    display: block;
-  }
-
-  .catImage {
-    display: none;
-  }
-
-  .catTablet {
     display: block;
   }
 
@@ -144,14 +136,6 @@
 @media screen and (min-width: 1440px) {
   .container {
     max-width: 1440px;
-  }
-
-  .catTablet {
-    display: none;
-  }
-
-  .catImage {
-    display: block;
   }
 
   .title {

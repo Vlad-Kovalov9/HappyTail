@@ -4,6 +4,10 @@
   fill: #00ad6f;
 }
 
+.image {
+  border-radius: 14px;
+}
+
 .info {
   display: flex;
   flex-direction: column;
@@ -72,20 +76,12 @@
     line-height: 133%;
     max-width: 418px;
   }
-
-  .image {
-    max-width: 294px;
-  }
 }
 
 @media screen and (min-width: 1440px) {
   .info {
     flex-direction: column-reverse;
     gap: 52px;
-  }
-
-  .image {
-    max-width: 522px;
   }
 
   .list {

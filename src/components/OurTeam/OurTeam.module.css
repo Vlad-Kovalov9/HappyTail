@@ -12,10 +12,6 @@
   text-align: center;
 }
 
-.image {
-  width: 171px;
-}
-
 .list {
   display: flex;
   flex-direction: column;
@@ -73,10 +69,6 @@
 
   .title {
     font-size: 22px;
-  }
-
-  .image {
-    width: 180px;
   }
 
   .list {

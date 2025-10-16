@@ -7,6 +7,8 @@ export default function Hero() {
       <img
         src="https://res.cloudinary.com/dcnsdntgs/image/upload/f_auto,q_auto,w_390/v1760617192/heroMobile_zlstvf.png"
         alt="Hero Dog Image"
+        width={390}
+        height={264}
         className={s.imageMobile}
       />
 

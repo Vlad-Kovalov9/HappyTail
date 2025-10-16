@@ -1,10 +1,23 @@
 import s from "./AboutInfo.module.css";
-import mainImage from "/image/AboutPage/AboutDog.jpg";
 
 export default function AboutInfo() {
   return (
     <div className={s.info}>
-      <img src={mainImage} alt="Dog Image" className={s.mainImage} />
+      <picture className={s.mainImageWrapper}>
+        <source
+          srcSet="https://res.cloudinary.com/dcnsdntgs/image/upload/f_auto,q_auto,w_522,h_706,c_fill/AboutPageDog_gxmfy0.jpg"
+          media="(min-width: 1440px)"
+        />
+        <source
+          srcSet="https://res.cloudinary.com/dcnsdntgs/image/upload/f_auto,q_auto,w_291,h_540,c_fill/AboutPageDog_gxmfy0.jpg"
+          media="(min-width: 768px)"
+        />
+        <img
+          src="https://res.cloudinary.com/dcnsdntgs/image/upload/f_auto,q_auto,w_358,h_324,c_fill/AboutPageDog_gxmfy0.jpg"
+          alt="Dog Image"
+          className={s.mainImage}
+        />
+      </picture>
 
       <div className={s.textBlock}>
         <h2 className={s.title}>
