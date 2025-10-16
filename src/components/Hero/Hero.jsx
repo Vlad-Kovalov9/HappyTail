@@ -11,7 +11,7 @@ export default function Hero() {
         height={264}
         className={s.imageMobile}
         loading="eager"
-        fetchpriority="high"
+        fetchPriority="high"
       />
 
       <div className={s.container}>
