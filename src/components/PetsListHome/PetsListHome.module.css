@@ -1,14 +1,15 @@
 .list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(171px, 1fr));
-  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
+  justify-content: start;
+  flex-wrap: wrap;
 }
 
 .image {
-  border-radius: 4px;
   width: 155px;
   height: 132px;
+  border-radius: 4px;
   object-fit: cover;
 }
 
@@ -64,16 +65,14 @@
   fill: #fb8c00;
 }
 
-.list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: start;
-  gap: 16px;
-}
-
 @media (min-width: 768px) {
   .list {
-    grid-template-columns: repeat(auto-fit, minmax(229px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .image {
+    width: 208px;
+    height: 207px;
   }
 
   .name {
@@ -100,16 +99,16 @@
   .textItem {
     padding: 4px;
   }
-
-  .image {
-    width: 208px;
-    height: 207px;
-  }
 }
 
 @media (min-width: 1440px) {
   .list {
-    grid-template-columns: repeat(auto-fit, minmax(305px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .image {
+    width: 273px;
+    height: 254px;
   }
 
   .name {
@@ -120,7 +119,6 @@
 
   .item {
     padding: 16px;
-    flex: 0 0 300px;
   }
 
   .textList {
@@ -131,10 +129,5 @@
 
   .textItem {
     padding: 4px 5px;
-  }
-
-  .image {
-    width: 273px;
-    height: 254px;
   }
 }

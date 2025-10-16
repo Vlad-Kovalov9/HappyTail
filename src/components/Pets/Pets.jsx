@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import s from "./Pets.module.css";
-import PetsList from "../PetsList/PetsList";
+import PetsListHome from "../PetsListHome/PetsListHome";
 import Loader from "../Loader/Loader";
 
 export default function Pets() {
@@ -48,7 +48,7 @@ export default function Pets() {
     <div className={s.container}>
       <h2 className={s.title}>Ці хвостики чекають на вас</h2>
 
-      <PetsList data={petsData.slice(0, visibleCount)} />
+      <PetsListHome data={petsData.slice(0, visibleCount)} />
 
       <NavLink to="/pets" className={s.link}>
         Подивитися всіх

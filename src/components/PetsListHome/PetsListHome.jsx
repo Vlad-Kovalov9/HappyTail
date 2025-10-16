@@ -1,8 +1,8 @@
-import s from "./PetsList.module.css";
+import s from "./PetsListHome.module.css";
 import sprite from "../../assets/icons/sprite.svg";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
-export default function PetsList({ data }) {
+export default function PetsListHome({ data }) {
   const navigate = useNavigate();
 
   return (
@@ -13,8 +13,15 @@ export default function PetsList({ data }) {
           className={s.item}
           onClick={() => navigate(`/pets/${pet._id}`)}
         >
-          <img src={pet.image} className={s.image} alt={`Фото ${pet.name}`} />
-
+          <picture>
+            <source srcSet={pet.imageDesktop} media="(min-width: 1440px)" />
+            <source srcSet={pet.imageTablet} media="(min-width: 768px)" />
+            <img
+              src={pet.imageMobile}
+              alt={`Фото ${pet.name}`}
+              className={s.image}
+            />
+          </picture>
           <h3 className={s.name}>{pet.name}</h3>
           <ul className={s.textList}>
             <li className={s.textItem}>

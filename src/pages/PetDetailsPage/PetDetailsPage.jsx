@@ -53,8 +53,15 @@ export default function PetDetailsPage() {
       </button>
 
       <div className={s.infoContainer}>
-        <img src={pet.image} alt={`${pet.name} Фото`} className={s.image} />
-
+        <picture>
+          <source srcSet={pet.imageDesktop} media="(min-width: 1440px)" />
+          <source srcSet={pet.imageTablet} media="(min-width: 768px)" />
+          <img
+            src={pet.imageMobile}
+            alt={`Фото ${pet.name}`}
+            className={s.image}
+          />
+        </picture>
         <div className={s.featureContainer}>
           <h2 className={s.name}>{pet.name}</h2>
 

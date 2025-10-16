@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./PetsPage.module.css";
 import sprite from "../../assets/icons/sprite.svg";
-import PetsList from "../../components/PetsList/PetsList.jsx";
+import PetsListPage from "../../components/PetsListPage/PetsListPage.jsx";
 import Filters from "../../components/Filters/Filters.jsx";
 import FiltersModal from "../../components/FiltersModal/FiltersModal.jsx";
 import {
@@ -129,7 +129,7 @@ export default function PetsPage() {
         </div>
 
         <div className={s.petsContainer}>
-          <PetsList data={filteredPets.slice(0, visibleCount)} />
+          <PetsListPage data={filteredPets.slice(0, visibleCount)} />
 
           {visibleCount < filteredPets.length && (
             <button className={s.showMore} onClick={() => dispatch(showMore())}>
