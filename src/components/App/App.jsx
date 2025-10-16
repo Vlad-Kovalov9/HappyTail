@@ -3,7 +3,8 @@ import Layout from "../Layout/Layout";
 import { lazy, Suspense } from "react";
 import { useAutoRefreshToken } from "../../hooks/useAutoRefreshToken.js";
 
-const HomePage = lazy(() => import("../../pages/HomePage/HomePage.jsx"));
+import HomePage from "../../pages/HomePage/HomePage.jsx";
+
 const AboutUsPage = lazy(() =>
   import("../../pages/AboutUsPage/AboutUsPage.jsx")
 );
