@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import s from "./Reviews.module.css";
-import ReviewsSlider from "../ReviewsSlider/ReviewsSlider";
+import Loader from "../Loader/Loader.jsx";
+
+const ReviewsSlider = lazy(() => import("../ReviewsSlider/ReviewsSlider.jsx"));
 
 export default function Reviews() {
   const [reviews, setReviews] = useState([]);
@@ -25,14 +27,16 @@ export default function Reviews() {
     fetchReviews();
   }, []);
 
-  if (loading) return <p>Завантаження...</p>;
+  if (loading) return <Loader />;
 
   return (
     <div className={s.container}>
       <h2 className={s.titleMobile}>Щасливі історії</h2>
       <h2 className={s.title}>Щасливі історії наших хвостатиків</h2>
 
-      <ReviewsSlider reviews={reviews} />
+      <Suspense fallback={<Loader />}>
+        <ReviewsSlider reviews={reviews} />
+      </Suspense>
 
       <NavLink to="/reviews" className={s.link}>
         Переглянути всі відгуки

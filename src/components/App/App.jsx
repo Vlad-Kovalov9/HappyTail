@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Layout from "../Layout/Layout";
 import { lazy, Suspense } from "react";
 import { useAutoRefreshToken } from "../../hooks/useAutoRefreshToken.js";
+import Loader from "../Loader/Loader.jsx";
 
 import HomePage from "../../pages/HomePage/HomePage.jsx";
 
@@ -29,7 +30,7 @@ export default function App() {
   useAutoRefreshToken();
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Loader />}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
