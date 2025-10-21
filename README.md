@@ -9,7 +9,6 @@ Built as a personal pet project to practice full-stack development, responsive U
 ## 🌐 Live Demo
 
 🔗 [Frontend (Vercel)](https://happy-tail-three.vercel.app/)  
-🔗 [Backend (Vercel)](https://happy-tail-backend.vercel.app/)  
 📦 [Backend Repository](https://github.com/Vlad-Kovalov9/HappyTail-Backend)
 
 ---
@@ -132,7 +131,9 @@ happy-tail/
 ## 🧑‍💻 Author
 
 **Vlad Kovalov**  
-📧 [GitHub Profile](https://github.com/Vlad-Kovalov9)
+📎 [GitHub Profile](https://github.com/Vlad-Kovalov9)
+
+🎨 **UI/UX Design:** created specifically for this project
 
 ---
 

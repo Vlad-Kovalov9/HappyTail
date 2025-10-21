@@ -9,7 +9,6 @@
 ## 🌐 Live Demo
 
 🔗 [Фронтенд (Vercel)](https://happy-tail-three.vercel.app/)  
-🔗 [Бекенд (Vercel)](https://happy-tail-backend.vercel.app/)  
 📦 [Репозиторій бекенду](https://github.com/Vlad-Kovalov9/HappyTail-Backend)
 
 ---
@@ -137,7 +136,9 @@ happy-tail/
 ## 🧑‍💻 Автор
 
 **Влад Ковальов**  
-📧 [GitHub профіль](https://github.com/Vlad-Kovalov9)
+📎 [GitHub профіль](https://github.com/Vlad-Kovalov9)
+
+🎨 **UI/UX дизайн:** створений спеціально для цього проєкту
 
 ---
 
